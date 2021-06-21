@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Default theme template to theme transaction responses.
+ *
+ * Available variables:
+ * - data: The returned transaction data from ePayco.
+ * - context: Useful information (maybe available or not) related to context where this theme is being used.
+ *
+ * @see template_preprocess_epayco__transaction_response()
+ */
+#}
+{%
+  set classes = [
+    'epayco--transaction-response',
+    context.provider|clean_class,
+    context.plugin_id|clean_class,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+{% if data.success %}
+  <div class="response-success response-success-code--{{ data.data.x_cod_response }}">
+    <div class="message">
+      <span>{% trans %}Transaction completed. Result was:{% endtrans %} {{ data.data.x_response }}</span>
+    </div>
+  </div>
+{% else %}
+  <div class="response-error">
+    <div class="message">
+      <span>{% trans %}Invalid transaction reference.{% endtrans %}</span>
+    </div>
+  </div>
+{% endif %}
+</div>

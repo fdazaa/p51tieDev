@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Default theme template for a payment option element. This template will not
+ * override parent element container. This is because there are some attributes
+ * we really need. You can to use this template to add/customize output according
+ * to provided context variables.
+ *
+ * Styling library is attached here, in order to allow themers to decide if needed
+ * to keep or remove it.
+ *
+ * Available variables:
+ * - context: Information (available or not available) depending on context.
+ *
+ * @see template_preprocess_epayco__payment_option()
+ */
+#}
+{%
+  set classes = [
+    'epayco--payment-option',
+    context.provider|clean_class,
+    context.plugin_id|clean_class,
+  ]
+%}
+{{ attach_library('epayco/payment.option.style') }}
+
+<div{{ attributes.addClass(classes) }}>
+{% if context.epayco.data.missing is not empty %}
+  <span class="epayco-missing-attributes">
+    {% trans %}Some parameters are missing. Please review your implementation.{% endtrans %}
+  </span>
+{% endif %}
+</div>

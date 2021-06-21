@@ -1,0 +1,31 @@
+epayco.factory.*:
+  type: config_entity
+  label: 'ePayco factory'
+  mapping:
+    id:
+      type: string
+      label: 'Drupal factory id'
+    label:
+      type: label
+      label: 'Drupal label'
+    langcode:
+      type: string
+      label: 'Drupal entity language.'
+    client_id:
+      type: string
+      label: 'Value for "p_cust_id_cliente".'
+    client_key:
+      type: string
+      label: 'Value for "p_key".'
+    api_public_key:
+      type: string
+      label: 'Value for "public_key".'
+    api_private_key:
+      type: string
+      label: 'Value for "private_key".'
+    language_code:
+      type: string
+      label: 'Language code to be used by default for ePayco.'
+    mode:
+      type: boolean
+      label: 'If test mode should be used.'

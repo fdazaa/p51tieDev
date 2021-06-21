@@ -1,0 +1,13 @@
+commerce_payment.commerce_payment_gateway.plugin.epayco_*:
+  type: commerce_payment_gateway_configuration
+  mapping:
+    factory:
+      type: string
+      label: 'Factory'
+
+commerce_payment.commerce_payment_gateway.plugin.epayco_onepage_checkout:
+  type: commerce_payment_gateway_configuration
+  mapping:
+    auto_open:
+      type: boolean
+      label: 'Auto open modal'

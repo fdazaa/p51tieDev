@@ -1,0 +1,3 @@
+execute epayco_api operations:
+  title: 'Execute API operations'
+  description: 'Allow to do operations by using the provided endpoint.'

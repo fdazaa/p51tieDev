@@ -1,0 +1,12 @@
+services:
+  epayco.logger:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['epayco']
+
+  epayco.handler:
+    class: Drupal\epayco\GatewayHandler
+    arguments: ['@http_client', '@epayco.logger']
+
+  epayco.payment_options.handler:
+    class: Drupal\epayco\PaymentOptionsHandler

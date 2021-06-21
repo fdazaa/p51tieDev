@@ -1,0 +1,6 @@
+services:
+  commerce_epayco.commands:
+    class: Drupal\commerce_epayco\Commands\DrushCommands
+    arguments: ['@commerce_epayco.handler']
+    tags:
+      - { name: drush.command }

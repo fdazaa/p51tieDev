@@ -1,0 +1,19 @@
+# Variable: Payment information.
+business_rules.variable.type.epayco_empty_payment:
+  type: mapping
+  label: 'Empty payment information'
+
+# Action: Fetch payment information.
+business_rules.action.type.epayco_fetch_payment:
+  type: mapping
+  label: 'Fetch payment information'
+  mapping:
+    variable:
+      type: string
+      label: 'Empty variable to store payment information'
+    reference_origin:
+      type: string
+      label: 'Type of origin to get payment reference'
+    reference_value:
+      type: string
+      label: 'The value of payment reference'

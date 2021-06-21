@@ -1,0 +1,8 @@
+date_widget.hence.behavior:
+  version: VERSION
+  js:
+    js/date-widget--hence-behavior.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once

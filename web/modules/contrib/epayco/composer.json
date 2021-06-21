@@ -1,0 +1,20 @@
+{
+  "name": "drupal/epayco",
+  "type": "drupal-module",
+  "description": "Provides integration for ePayco.",
+  "homepage": "http://drupal.org/project/epayco",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Fernando Muñoz",
+      "homepage": "https://www.drupal.org/u/waspper"
+    },
+    {
+      "name": "Other contributors",
+      "homepage":"https://www.drupal.org/node/3079813/committers"
+    }
+  ],
+  "require": {
+    "epayco/epayco-php" : "dev-master"
+  }
+}

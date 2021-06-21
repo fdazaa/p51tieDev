@@ -1,0 +1,27 @@
+epayco.js:
+  version: VERSION
+  js:
+    "https://s3-us-west-2.amazonaws.com/epayco/v1.0/epayco.min.js": { type: external, attributes: { charset: utf-8 } }
+  dependencies:
+    - core/jquery
+
+checkout.js:
+  version: VERSION
+  js:
+    "https://checkout.epayco.co/checkout.js": { type: external, attributes: { charset: utf-8 } }
+
+payment.option.behavior:
+  version: VERSION
+  js:
+    js/epayco--payment-option.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+    - epayco/checkout.js
+
+payment.option.style:
+  version: VERSION
+  css:
+      theme:
+        css/epayco--payment-option.css: {}

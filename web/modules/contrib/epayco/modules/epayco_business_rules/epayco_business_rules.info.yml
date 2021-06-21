@@ -1,0 +1,13 @@
+name: ePayco Business Rules
+type: module
+description: 'Provides integration with Business Rules module.'
+package: ePayco
+core_version_requirement: ^8.7.7 || ^9
+dependencies:
+  - epayco:epayco
+  - business_rules:business_rules
+
+# Information added by Drupal.org packaging script on 2021-06-17
+version: '8.x-1.5'
+project: 'epayco'
+datestamp: 1623940374

@@ -1,0 +1,7 @@
+services:
+  epayco_business_rules.transaction_response:
+    class: Drupal\epayco_business_rules\EventSubscriber\TransactionResponseListener
+    tags:
+      - { name: event_subscriber }
+    calls:
+      - [setContainer, ['@service_container']]

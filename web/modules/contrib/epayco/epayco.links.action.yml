@@ -1,0 +1,12 @@
+epayco.factory.add_action:
+  route_name: entity.epayco_factory.add_form
+  title: 'Add factory'
+  appears_on:
+    - entity.epayco_factory.list
+
+epayco.factory.list_action:
+  route_name: entity.epayco_factory.list
+  title: 'List factories'
+  appears_on:
+    - entity.epayco_factory.add_form
+    - entity.epayco_factory.edit_form

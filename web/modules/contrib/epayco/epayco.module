@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains epayco.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function epayco_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.epayco':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Integrating ePayco with Drupal.') . '</p>';
+      $output .= '<p>' . t('See more at <a href="@epayco_docs">ePayco docs</a>.', ['@epayco_docs' => 'https://epayco.co']) . '</p>';
+
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function epayco_theme($existing, $type, $theme, $path) {
+  return [
+    'epayco__payment_option' => [
+      'variables' => [
+        'context' => [],
+      ],
+    ],
+    'epayco__transaction_response' => [
+      'variables' => [
+        'data' => [],
+        'context' => [],
+      ],
+    ],
+  ];
+}

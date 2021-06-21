@@ -1,0 +1,7 @@
+epayco_api.endpoint:
+  path: '/epayco/api/operation'
+  defaults:
+    _controller: 'Drupal\epayco_api\Controller\Operation::process'
+  methods: [POST]
+  requirements:
+    _permission: 'execute epayco_api operations'

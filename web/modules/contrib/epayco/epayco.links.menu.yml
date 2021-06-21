@@ -1,0 +1,5 @@
+entity.epayco_factory.list:
+  title: 'ePayco'
+  route_name: entity.epayco_factory.list
+  parent: system.admin_config_services
+  description: 'Configure several sets of parameters for ePayco.'

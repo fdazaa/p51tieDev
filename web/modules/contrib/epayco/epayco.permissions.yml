@@ -1,0 +1,8 @@
+administer epayco factory:
+  title: 'Administer ePayco factory'
+  description: 'Allow to manage ePayco factory configuration entities.'
+  restrict access: TRUE
+
+access epayco transaction response:
+  title: 'Access transaction response'
+  description: 'Allow to access transactions coming from ePayco. This will not cover custom pages, unless you manually dispatch event "\Drupal\epayco\Event\GatewayTransactionEvents::EPAYCO_TRANSACTION_RESPONSE".'

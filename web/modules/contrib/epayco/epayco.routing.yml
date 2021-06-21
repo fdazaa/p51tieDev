@@ -1,0 +1,38 @@
+entity.epayco_factory.list:
+  path: '/admin/config/services/epayco/factory'
+  defaults:
+    _entity_list: 'epayco_factory'
+    _title: 'ePayco factories'
+  requirements:
+    _permission: 'administer epayco factory'
+
+entity.epayco_factory.add_form:
+  path: '/admin/config/services/epayco/factory/add'
+  defaults:
+    _title: 'Add factory'
+    _entity_form: epayco_factory.add
+  requirements:
+    _entity_create_access: epayco_factory
+
+entity.epayco_factory.edit_form:
+  path: '/admin/config/services/epayco/factory/{epayco_factory}/edit'
+  defaults:
+    _title: 'Edit factory'
+    _entity_form: epayco_factory.edit
+  requirements:
+    _entity_access: epayco_factory.update
+
+entity.epayco_factory.delete_form:
+  path: '/admin/config/services/epayco/factory/{epayco_factory}/delete'
+  defaults:
+    _title: 'Delete factory'
+    _entity_form: epayco_factory.delete
+  requirements:
+    _entity_access: epayco_factory.delete
+
+epayco.transaction.default_response:
+  path: '/epayco/transaction/response'
+  defaults:
+    _controller: '\Drupal\epayco\Controller\TransactionResponse::responsePage'
+  requirements:
+    _custom_access: '\Drupal\epayco\Controller\TransactionResponse::checkAccess'

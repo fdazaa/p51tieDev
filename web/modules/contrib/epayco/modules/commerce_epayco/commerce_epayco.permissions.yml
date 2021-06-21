@@ -1,0 +1,4 @@
+commerce_epayco override gateway parameters:
+  title: 'Override gateway parameters'
+  description: 'Allow users to override ePayco gateway parameters.'
+  restrict access: TRUE

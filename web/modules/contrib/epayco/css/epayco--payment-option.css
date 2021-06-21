@@ -1,0 +1,10 @@
+/**
+ * Basic styling for a payment option.
+ */
+.js--epayco--payment-option--callback .epayco--payment-option {
+  width: 144px;
+  height: 37px;
+  cursor: pointer;
+  font-size: 0;
+  background: url('../images/epayco--payment-option.png') no-repeat;
+}

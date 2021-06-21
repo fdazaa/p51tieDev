@@ -1,0 +1,201 @@
+<?php
+
+/**
+ * @file
+ * Contains commerce_epayco.module.
+ */
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function commerce_epayco_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'commerce_store') {
+    $fields['epayco_client_id'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Client ID'))
+      ->setDescription(_commerce_epayco_get_description_text('p_cust_id_cliente'))
+      ->setRequired(FALSE)
+      ->setTranslatable(FALSE)
+      ->setSettings([
+        'default_value' => '',
+        'max_length' => 255,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['epayco_key'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Key'))
+      ->setDescription(_commerce_epayco_get_description_text('p_key'))
+      ->setRequired(FALSE)
+      ->setTranslatable(FALSE)
+      ->setSettings([
+        'default_value' => '',
+        'max_length' => 255,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 1,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['epayco_api_public_key'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('API public key'))
+      ->setDescription(_commerce_epayco_get_description_text('public_key'))
+      ->setRequired(FALSE)
+      ->setTranslatable(FALSE)
+      ->setSettings([
+        'default_value' => '',
+        'max_length' => 255,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 2,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['epayco_api_private_key'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('API private key'))
+      ->setDescription(_commerce_epayco_get_description_text('private_key'))
+      ->setRequired(FALSE)
+      ->setTranslatable(FALSE)
+      ->setSettings([
+        'default_value' => '',
+        'max_length' => 255,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 3,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['epayco_language'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Language code'))
+      ->setDescription(t('Default language code. For example <em>EN</em> or <em>ES</em>.'))
+      ->setRequired(FALSE)
+      ->setTranslatable(FALSE)
+      ->setSettings([
+        'default_value' => '',
+        'max_length' => 5,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 4,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['epayco_mode'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Test mode enabled'))
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'settings' => [
+          'display_label' => TRUE,
+        ],
+        'weight' => 5,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDefaultValue(FALSE);
+
+    return $fields;
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for 'commerce_store_form'.
+ */
+function commerce_epayco_form_commerce_store_form_alter(&$form, FormStateInterface $form_state) {
+  if (isset($form['epayco_client_id']) ||
+    isset($form['epayco_key']) ||
+    isset($form['epayco_mode']) ||
+    isset($form['epayco_language']) ||
+    isset($form['epayco_api_public_key']) ||
+    isset($form['epayco_api_private_key'])) {
+    $form['epayco'] = [
+      '#title' => t('ePayco'),
+      '#weight' => 99,
+      '#type' => 'details',
+      '#collapsible' => TRUE,
+      '#open' => TRUE,
+      '#access' => _commerce_epayco_check_access(),
+      'epayco_basic' => [
+        '#title' => t('Basic settings'),
+        '#type' => 'details',
+        '#collapsible' => TRUE,
+        '#open' => TRUE,
+        '#description' => t('Configuration values for standard checkout. To make values to take effect, you must fill both fields.'),
+        '#weight' => -10,
+      ],
+      'epayco_api' => [
+        '#title' => t('API settings'),
+        '#type' => 'details',
+        '#collapsible' => TRUE,
+        '#open' => TRUE,
+        '#description' => t('Configuration values for API. For "One page checkout" payment gateway, you need at least public key and language code.'),
+        '#weight' => -5,
+      ],
+    ];
+    $form['epayco_key']['#group'] = 'epayco_basic';
+    $form['epayco_client_id']['#group'] = 'epayco_basic';
+    $form['epayco_api_public_key']['#group'] = 'epayco_api';
+    $form['epayco_api_private_key']['#group'] = 'epayco_api';
+    $form['epayco_language']['#group'] = 'epayco';
+    $form['epayco_mode']['#group'] = 'epayco';
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function commerce_epayco_cron() {
+  \Drupal::service('commerce_epayco.handler')->checkPendingPayments();
+}
+
+/**
+ * Helper function to check if user has access to set ePayco parameters.
+ *
+ * And check if there is any ePayco payment gateway provided.
+ *
+ * @param \Drupal\user\Entity\User $user
+ *   - The user to check permissions to.
+ *
+ * @return bool
+ *   $access-TRUE or FALSE, depending if user has access and available gateways.
+ */
+function _commerce_epayco_check_access(User $user = NULL) {
+  if (!$user || !($user instanceof User)) {
+    $user = \Drupal::currentUser();
+  }
+
+  // 1. Check if given user has permissions to override.
+  $has_permission = $user->hasPermission('commerce_epayco override gateway parameters');
+  // 2. Check is there are available gateways.
+  $query = \Drupal::entityQuery('commerce_payment_gateway')
+    ->condition('plugin', ['epayco_standard_checkout', 'epayco_onepage_checkout'], 'IN');
+  $gateways = $query->count()->execute();
+  // 3. Check if both conditions are true.
+  $access = $has_permission && $gateways > 0;
+
+  return $access;
+}
+
+/**
+ * Single helper function to get help text in a shared format.
+ *
+ * @param string $name
+ *   Single string to use into the description.
+ */
+function _commerce_epayco_get_description_text($name) {
+  return !empty($name) ? t('This is also known as @name at your ePayco dashboard.', ['@name' => $name]) : '';
+}

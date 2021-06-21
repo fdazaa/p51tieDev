@@ -1,0 +1,9 @@
+services:
+  commerce_epayco.logger:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['commerce_epayco']
+
+  commerce_epayco.handler:
+    class: Drupal\commerce_epayco\CommerceGatewayHandler
+    arguments: ['@http_client', '@commerce_epayco.logger', '@entity_type.manager']
