@@ -1,4 +1,4 @@
 global-styling:
   css:
     base:
-      dist/tailwind.css: {}
+      public/css/globalstyles.css: {}
