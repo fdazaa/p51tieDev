@@ -27,3 +27,8 @@ function tietheme_preprocess_block(&$variables) {
 function tietheme_get_active_theme() {
   return \Drupal::service('theme.manager')->getActiveTheme()->getName();
 }
+
+/**
+function tietheme_preprocess_menus(&$menu_name) {
+  dpm($menu_name, 'IMPRIME VARIABLES');
+}*/
