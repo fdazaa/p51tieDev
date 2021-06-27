@@ -1,0 +1,21 @@
+uuid: f7aceacf-0854-4e05-a4a6-78c84a2c2bb7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_de_industria
+    - node.type.registro_tie
+  module:
+    - options
+id: node.registro_tie.field_tipo_de_industria
+field_name: field_tipo_de_industria
+entity_type: node
+bundle: registro_tie
+label: 'Tipo de Industria'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

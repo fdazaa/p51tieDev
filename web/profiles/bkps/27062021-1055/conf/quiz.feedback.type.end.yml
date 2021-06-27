@@ -1,0 +1,32 @@
+uuid: 1d046fe6-c86c-4716-b8a7-8d033c8a5aeb
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 87jkjzcqZgjPwKvaOVKWkhwAhuQwJboNSfAQkx5Rbdk
+id: end
+label: 'Después de Formulario de preguntas'
+description: 'Mostrar resultados después de resolver el Formulario de preguntas'
+component:
+  expression:
+    id: rules_and
+    uuid: e797c27d-c914-47ac-b5e3-c45ddb57372a
+    weight: 0
+    conditions:
+      -
+        id: rules_condition
+        uuid: 354e2aeb-9558-4144-a180-366b9ccc7017
+        weight: 0
+        context_values: {  }
+        context_mapping:
+          data: quiz_result.time_end
+        context_processors: {  }
+        provides_mapping: {  }
+        condition_id: rules_data_is_empty
+        negate: true
+  context_definitions:
+    quiz_result:
+      type: 'entity:quiz_result'
+      label: 'Quiz result'
+      description: 'Quiz result to evaluate feedback'
+  provided_context_definitions: {  }

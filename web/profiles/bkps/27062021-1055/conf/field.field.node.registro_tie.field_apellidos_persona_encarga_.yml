@@ -1,0 +1,19 @@
+uuid: fa287690-ec61-449f-bd5f-13c6b196f8a9
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_apellidos_persona_encarga_
+    - node.type.registro_tie
+id: node.registro_tie.field_apellidos_persona_encarga_
+field_name: field_apellidos_persona_encarga_
+entity_type: node
+bundle: registro_tie
+label: 'Apellidos Persona Encarga del Proceso'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

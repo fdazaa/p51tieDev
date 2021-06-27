@@ -1,0 +1,9 @@
+uuid: 4e4af9e9-19a0-44c3-ade4-6c58ef5cf70f
+langcode: es
+status: true
+dependencies: {  }
+id: admin_sitio
+label: 'Admin Sitio'
+weight: 5
+is_admin: null
+permissions: {  }

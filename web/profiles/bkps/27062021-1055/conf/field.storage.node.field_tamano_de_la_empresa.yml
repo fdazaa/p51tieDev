@@ -1,0 +1,30 @@
+uuid: 2b060489-1e38-4df1-8c45-eaed996d363b
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_tamano_de_la_empresa
+field_name: field_tamano_de_la_empresa
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Pequeña
+      label: Pequeña
+    -
+      value: Mediana
+      label: Mediana
+    -
+      value: 'Gran Empresa'
+      label: 'Gran Empresa'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

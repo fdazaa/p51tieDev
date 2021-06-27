@@ -1,0 +1,11 @@
+uuid: 7fad7d8d-0dea-46c4-b2f6-68368504f2e3
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - quiz_matching
+_core:
+  default_config_hash: '-qoI8tDXUmImnSBx9h18aEBKaMISi2M16APBzSZ4jB0'
+id: matching
+label: 'Matching response'

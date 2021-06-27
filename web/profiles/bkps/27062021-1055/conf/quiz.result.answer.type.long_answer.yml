@@ -1,0 +1,11 @@
+uuid: 19b7183e-ef01-4860-a3a3-c8120b17e6fd
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - quiz_long_answer
+_core:
+  default_config_hash: IeCgBbqI7CcrbVXjS-K7Ns9yvVr55JQ_OtC7oEeKJj0
+id: long_answer
+label: 'Long answer response'

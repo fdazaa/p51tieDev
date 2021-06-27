@@ -1,0 +1,11 @@
+uuid: 52aed1ff-3c38-426d-85cf-e23bc5f63ee8
+langcode: es
+status: true
+dependencies:
+  enforced:
+    module:
+      - quiz_directions
+_core:
+  default_config_hash: UShjfrcYdTbjWBDM1jeMsAiLLkPvkcu684XOSZcz83A
+id: directions
+label: 'Directions response'

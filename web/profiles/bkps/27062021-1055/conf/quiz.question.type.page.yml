@@ -1,0 +1,11 @@
+uuid: 9775ef08-f447-49d3-981c-6d7e1eed1293
+langcode: es
+status: true
+dependencies:
+  enforced:
+    module:
+      - quiz_page
+_core:
+  default_config_hash: ECx96FHowod82k1B2K3kOaqrh6W99jB-GH0cEwMigrw
+id: page
+label: 'Quiz page'

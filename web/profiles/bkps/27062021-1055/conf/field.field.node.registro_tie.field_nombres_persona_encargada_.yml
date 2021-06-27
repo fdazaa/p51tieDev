@@ -1,0 +1,19 @@
+uuid: 99c6d70d-8e05-445c-b519-b9f61f53efbf
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nombres_persona_encargada_
+    - node.type.registro_tie
+id: node.registro_tie.field_nombres_persona_encargada_
+field_name: field_nombres_persona_encargada_
+entity_type: node
+bundle: registro_tie
+label: 'Nombres Persona Encargada del Proceso'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

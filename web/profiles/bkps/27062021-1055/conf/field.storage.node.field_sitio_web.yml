@@ -1,0 +1,21 @@
+uuid: 276d7abf-01c3-4718-92c3-acb23eb22187
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_sitio_web
+field_name: field_sitio_web
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

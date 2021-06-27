@@ -1,0 +1,11 @@
+uuid: 040fe622-b329-4bd2-b774-8125a736d304
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.registro_tie
+id: node.registro_tie
+target_entity_type_id: node
+target_bundle: registro_tie
+default_langcode: site_default
+language_alterable: false

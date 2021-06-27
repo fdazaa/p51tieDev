@@ -1,0 +1,19 @@
+uuid: 7ffca46d-9228-43ac-b5f8-e7ba78497e93
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_red_social
+    - node.type.registro_tie
+id: node.registro_tie.field_red_social
+field_name: field_red_social
+entity_type: node
+bundle: registro_tie
+label: 'Red Social'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

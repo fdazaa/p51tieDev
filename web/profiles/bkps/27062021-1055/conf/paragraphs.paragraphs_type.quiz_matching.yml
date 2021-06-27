@@ -1,0 +1,15 @@
+uuid: 09610a72-ece2-4688-82c3-70dae5dbed51
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - quiz_matching
+_core:
+  default_config_hash: L063f-RGGBFYFMfpT4MJE9t-DExMcmNgzoMZW3K6McY
+id: quiz_matching
+label: 'Matching question'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

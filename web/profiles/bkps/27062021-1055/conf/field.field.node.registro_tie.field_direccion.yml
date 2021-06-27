@@ -1,0 +1,19 @@
+uuid: 43b02996-38ae-4c19-ae43-40bd68dd0210
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_direccion
+    - node.type.registro_tie
+id: node.registro_tie.field_direccion
+field_name: field_direccion
+entity_type: node
+bundle: registro_tie
+label: Dirección
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

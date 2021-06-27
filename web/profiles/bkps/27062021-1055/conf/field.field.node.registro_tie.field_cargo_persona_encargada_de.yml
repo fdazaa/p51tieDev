@@ -1,0 +1,21 @@
+uuid: eae228dd-4be1-40bd-9aa9-9fe3ff66bdf0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cargo_persona_encargada_de
+    - node.type.registro_tie
+  module:
+    - options
+id: node.registro_tie.field_cargo_persona_encargada_de
+field_name: field_cargo_persona_encargada_de
+entity_type: node
+bundle: registro_tie
+label: 'Cargo Persona Encargada del Proceso'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

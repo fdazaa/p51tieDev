@@ -1,0 +1,21 @@
+uuid: 3b5e0334-988f-4b75-b775-15df550f72cf
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_genero_representante_legal
+    - node.type.registro_tie
+  module:
+    - options
+id: node.registro_tie.field_genero_representante_legal
+field_name: field_genero_representante_legal
+entity_type: node
+bundle: registro_tie
+label: 'Género Representante Legal'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

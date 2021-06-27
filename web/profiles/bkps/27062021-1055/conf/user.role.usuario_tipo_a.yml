@@ -1,0 +1,9 @@
+uuid: 69bc84ed-9022-4cf2-a09b-3fd96542217d
+langcode: es
+status: true
+dependencies: {  }
+id: usuario_tipo_a
+label: 'USUARIO TIPO A'
+weight: 3
+is_admin: null
+permissions: {  }

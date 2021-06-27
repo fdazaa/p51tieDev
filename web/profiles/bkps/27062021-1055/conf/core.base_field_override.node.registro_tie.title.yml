@@ -1,0 +1,18 @@
+uuid: 877eaf3d-eabb-40d5-8cf6-76c430d0b7b8
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.registro_tie
+id: node.registro_tie.title
+field_name: title
+entity_type: node
+bundle: registro_tie
+label: 'Nombre de la Empresa o Razon Social'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
