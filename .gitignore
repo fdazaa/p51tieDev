@@ -1,4 +1,4 @@
 # Ignora archivos de configuracion Drupal
-settings.php
+/sites/*/*settings*.php
 
 
