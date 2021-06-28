@@ -1,4 +1,4 @@
 # Ignora archivos de configuracion Drupal
 /web/sites/*/*settings*.php
-/web/sites/*/*settings*.yml
+/web/sites/*/*services*.yml
 
