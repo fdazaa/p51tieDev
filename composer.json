@@ -23,6 +23,7 @@
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
         "drupal/epayco": "^1.5",
+        "drupal/field_group": "^3.1",
         "drupal/forms_steps": "^1.5",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/menu_per_role": "^1.3",
