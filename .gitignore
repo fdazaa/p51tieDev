@@ -5,4 +5,4 @@
 /sites/*/translations
 /sites/*/tmp
 /sites/*/cache
-/sites/*/php
+/sites/*/php/twig
