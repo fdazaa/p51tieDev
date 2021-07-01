@@ -1,0 +1,25 @@
+uuid: 15f48b9d-9011-4102-8418-054ff180973d
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:141670f4-7a56-4974-86f6-dcf5179fd3f9'
+  module:
+    - block_content
+  theme:
+    - tietheme
+id: accesos
+theme: tietheme
+region: header_accesos
+weight: 0
+provider: null
+plugin: 'block_content:141670f4-7a56-4974-86f6-dcf5179fd3f9'
+settings:
+  id: 'block_content:141670f4-7a56-4974-86f6-dcf5179fd3f9'
+  label: Accesos
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

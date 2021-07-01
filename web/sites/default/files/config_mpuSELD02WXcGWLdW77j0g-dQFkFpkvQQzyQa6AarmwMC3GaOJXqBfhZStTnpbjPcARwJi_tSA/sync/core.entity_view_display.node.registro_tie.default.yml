@@ -1,0 +1,235 @@
+uuid: 8c2aae44-f80f-4812-a72c-1a7a888b91c2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.registro_tie.field_apellidos_persona_encarga_
+    - field.field.node.registro_tie.field_apellidos_representante_le
+    - field.field.node.registro_tie.field_cargo_persona_encargada_de
+    - field.field.node.registro_tie.field_ciudad_municipio
+    - field.field.node.registro_tie.field_correo_electronico_de_la_e
+    - field.field.node.registro_tie.field_correo_electronico_persona
+    - field.field.node.registro_tie.field_departamento
+    - field.field.node.registro_tie.field_digito_de_verificacion
+    - field.field.node.registro_tie.field_direccion
+    - field.field.node.registro_tie.field_fecha_de_constitucion_de_l
+    - field.field.node.registro_tie.field_genero_representante_legal
+    - field.field.node.registro_tie.field_nombre_representante_legal
+    - field.field.node.registro_tie.field_nombres_persona_encargada_
+    - field.field.node.registro_tie.field_numero_de_identificacion
+    - field.field.node.registro_tie.field_numero_de_identificacion_r
+    - field.field.node.registro_tie.field_red_social
+    - field.field.node.registro_tie.field_sitio_web
+    - field.field.node.registro_tie.field_tamano_de_la_empresa
+    - field.field.node.registro_tie.field_telefono_persona_encargada
+    - field.field.node.registro_tie.field_telefono_representante_leg
+    - field.field.node.registro_tie.field_telfono
+    - field.field.node.registro_tie.field_tipo_de_identifiacion_repr
+    - field.field.node.registro_tie.field_tipo_de_identificacion
+    - field.field.node.registro_tie.field_tipo_de_industria
+    - node.type.registro_tie
+  module:
+    - options
+    - telephone
+    - tie_tools
+    - user
+id: node.registro_tie.default
+targetEntityType: node
+bundle: registro_tie
+mode: default
+content:
+  field_apellidos_persona_encarga_:
+    weight: 18
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_apellidos_representante_le:
+    weight: 12
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cargo_persona_encargada_de:
+    weight: 19
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ciudad_municipio:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_correo_electronico_de_la_e:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_correo_electronico_persona:
+    weight: 20
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_departamento:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_digito_de_verificacion:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_direccion:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_fecha_de_constitucion_de_l:
+    weight: 22
+    label: above
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+    type: datetime_time_ago_and_date
+    region: content
+  field_genero_representante_legal:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_nombre_representante_legal:
+    weight: 11
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nombres_persona_encargada_:
+    weight: 17
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_numero_de_identificacion:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_numero_de_identificacion_r:
+    weight: 15
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_red_social:
+    weight: 24
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_sitio_web:
+    weight: 23
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_tamano_de_la_empresa:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_telefono_persona_encargada:
+    weight: 21
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_telefono_representante_leg:
+    weight: 16
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_telfono:
+    weight: 9
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_tipo_de_identifiacion_repr:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_tipo_de_identificacion:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_tipo_de_industria:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

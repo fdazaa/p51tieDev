@@ -1,0 +1,21 @@
+uuid: 41071115-bc1f-40f9-ab28-160e5cd8617b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_de_identificacion
+    - node.type.registro_tie
+  module:
+    - options
+id: node.registro_tie.field_tipo_de_identificacion
+field_name: field_tipo_de_identificacion
+entity_type: node
+bundle: registro_tie
+label: 'Tipo de Identificación'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

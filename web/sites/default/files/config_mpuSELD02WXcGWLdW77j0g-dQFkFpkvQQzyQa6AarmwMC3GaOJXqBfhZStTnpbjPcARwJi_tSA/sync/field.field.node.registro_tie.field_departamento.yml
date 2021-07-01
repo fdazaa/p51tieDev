@@ -1,0 +1,21 @@
+uuid: 633ddb36-1fd2-46f8-9dda-981a787d7039
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_departamento
+    - node.type.registro_tie
+  module:
+    - options
+id: node.registro_tie.field_departamento
+field_name: field_departamento
+entity_type: node
+bundle: registro_tie
+label: Departamento
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

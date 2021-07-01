@@ -1,0 +1,23 @@
+uuid: 133dbc70-2e63-420a-b896-35e5ada8e1ab
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_de_identifiacion_repr
+    - node.type.registro_tie
+  module:
+    - options
+id: node.registro_tie.field_tipo_de_identifiacion_repr
+field_name: field_tipo_de_identifiacion_repr
+entity_type: node
+bundle: registro_tie
+label: 'Tipo de Identifiación Representante Legal'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: CC
+default_value_callback: ''
+settings: {  }
+field_type: list_string

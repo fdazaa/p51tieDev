@@ -1,0 +1,25 @@
+uuid: 1fd7f786-3f8a-4115-8096-c8eea3d9c3ce
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_digito_de_verificacion
+    - node.type.registro_tie
+id: node.registro_tie.field_digito_de_verificacion
+field_name: field_digito_de_verificacion
+entity_type: node
+bundle: registro_tie
+label: 'Digito de Verificación'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 1
+  max: 9
+  prefix: ''
+  suffix: ''
+field_type: integer
