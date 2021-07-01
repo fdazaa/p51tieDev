@@ -2,7 +2,9 @@
 /web/sites/*/*settings*.php
 /web/sites/*/*services*.yml
 /composer.lock
-/sites/*/translations
-/sites/*/tmp
-/sites/*/cache
-/sites/*/php/twig/*
+/web/sites/*/translations
+/web/sites/*/tmp
+/web/sites/*/cache
+/web/sites/*/php
+/web/sites/*/css
+/web/sites/*/js
