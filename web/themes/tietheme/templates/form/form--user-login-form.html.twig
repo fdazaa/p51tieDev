@@ -1,0 +1,39 @@
+{#
+    *plantilla personalizada de formulario de login
+#}
+<div class="login-form login-form__wrapper">
+  <form{{ attributes }}>
+    <div class="login-form__top">
+      <div id="error_messages"></div>
+      {{ element.messages }}
+
+
+      {{ element.name }} {# username element #}
+
+
+      <div class="tw-block tw-uppercase tw-text-gray-700 tw-text-xs tw-font-bold tw-mb-2">
+      {{ element.pass }} {# password element #}
+      </div>
+
+      <div class="login-form__help_actions">
+        <input id="show_password" class="show_password" type="checkbox" />
+        <label class="password-toggle" for="show_password">Show password</label>
+        <a href="/user/password" class="forgot-password">Forgot Password?</a>
+      </div>
+      {{ element.form_build_id }} {# required #}
+      {{ element.form_id }} {# required #}
+
+
+      <div class="tw-text-center tw-mt-6">
+
+      <div class=" login-form__submit tw-bg-black tw-text-white active:bg-gray-900 tw-text-sm
+           tw-font-bold tw-uppercase tw-px-6 tw-py-3 tw-rounded tw-shadow
+           hover:tw-shadow-lg tw-outline-none tw-focus:outline-none tw-mr-1
+           tw-mb-1 tw-w-full">
+        {{ element.actions.submit }}
+      </div>
+      </div>
+
+    </div>
+  </form>
+</div>
