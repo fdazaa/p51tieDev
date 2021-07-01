@@ -1,4 +1,8 @@
 # Ignora archivos de configuracion Drupal
 /web/sites/*/*settings*.php
 /web/sites/*/*services*.yml
-
+/composer.lock
+/sites/*/translations
+/sites/*/tmp
+/sites/*/cache
+/sites/*/php
