@@ -21,7 +21,7 @@
         "drupal/commerce": "^2.24",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
-        "drupal/core-recommended": "^9.1",
+        "drupal/core-recommended": "9.2",
         "drupal/cshs": "^3.3",
         "drupal/epayco": "^1.5",
         "drupal/field_group": "^3.1",
