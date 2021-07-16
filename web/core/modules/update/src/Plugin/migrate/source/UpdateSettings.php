@@ -5,13 +5,7 @@ namespace Drupal\update\Plugin\migrate\source;
 use Drupal\migrate_drupal\Plugin\migrate\source\Variable;
 
 /**
- * Drupal 6/7 Update settings source from database.
- *
- * For available configuration keys, refer to the parent classes.
- *
- * @see \Drupal\migrate_drupal\Plugin\migrate\source\Variable
- * @see \Drupal\migrate\Plugin\migrate\source\SqlBase
- * @see \Drupal\migrate\Plugin\migrate\source\SourcePluginBase
+ * Update settings source plugin.
  *
  * @MigrateSource(
  *   id = "update_settings",

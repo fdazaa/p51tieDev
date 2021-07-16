@@ -102,16 +102,14 @@ class SharedTempStoreTest extends UnitTestCase {
    * @covers ::get
    */
   public function testGet() {
-    $this->keyValue->expects($this->exactly(2))
+    $this->keyValue->expects($this->at(0))
       ->method('get')
-      ->withConsecutive(
-        ['test_2'],
-        ['test'],
-      )
-      ->willReturnOnConsecutiveCalls(
-        FALSE,
-        $this->ownObject,
-      );
+      ->with('test_2')
+      ->will($this->returnValue(FALSE));
+    $this->keyValue->expects($this->at(1))
+      ->method('get')
+      ->with('test')
+      ->will($this->returnValue($this->ownObject));
 
     $this->assertNull($this->tempStore->get('test_2'));
     $this->assertSame($this->ownObject->data, $this->tempStore->get('test'));
@@ -123,18 +121,18 @@ class SharedTempStoreTest extends UnitTestCase {
    * @covers ::getIfOwner
    */
   public function testGetIfOwner() {
-    $this->keyValue->expects($this->exactly(3))
+    $this->keyValue->expects($this->at(0))
       ->method('get')
-      ->withConsecutive(
-        ['test_2'],
-        ['test'],
-        ['test'],
-      )
-      ->willReturnOnConsecutiveCalls(
-        FALSE,
-        $this->ownObject,
-        $this->otherObject,
-      );
+      ->with('test_2')
+      ->will($this->returnValue(FALSE));
+    $this->keyValue->expects($this->at(1))
+      ->method('get')
+      ->with('test')
+      ->will($this->returnValue($this->ownObject));
+    $this->keyValue->expects($this->at(2))
+      ->method('get')
+      ->with('test')
+      ->will($this->returnValue($this->otherObject));
 
     $this->assertNull($this->tempStore->getIfOwner('test_2'));
     $this->assertSame($this->ownObject->data, $this->tempStore->getIfOwner('test'));
@@ -147,13 +145,17 @@ class SharedTempStoreTest extends UnitTestCase {
    * @covers ::set
    */
   public function testSetWithNoLockAvailable() {
-    $this->lock->expects($this->exactly(2))
+    $this->lock->expects($this->at(0))
       ->method('acquire')
       ->with('test')
       ->will($this->returnValue(FALSE));
-    $this->lock->expects($this->once())
+    $this->lock->expects($this->at(1))
       ->method('wait')
       ->with('test');
+    $this->lock->expects($this->at(2))
+      ->method('acquire')
+      ->with('test')
+      ->will($this->returnValue(FALSE));
 
     $this->keyValue->expects($this->once())
       ->method('getCollectionName');
@@ -260,10 +262,15 @@ class SharedTempStoreTest extends UnitTestCase {
    * @covers ::getMetadata
    */
   public function testGetMetadata() {
-    $this->keyValue->expects($this->exactly(2))
+    $this->keyValue->expects($this->at(0))
       ->method('get')
       ->with('test')
-      ->willReturnOnConsecutiveCalls($this->ownObject, FALSE);
+      ->will($this->returnValue($this->ownObject));
+
+    $this->keyValue->expects($this->at(1))
+      ->method('get')
+      ->with('test')
+      ->will($this->returnValue(FALSE));
 
     $metadata = $this->tempStore->getMetadata('test');
     $this->assertInstanceOf(Lock::class, $metadata);
@@ -303,13 +310,17 @@ class SharedTempStoreTest extends UnitTestCase {
    * @covers ::delete
    */
   public function testDeleteWithNoLockAvailable() {
-    $this->lock->expects($this->exactly(2))
+    $this->lock->expects($this->at(0))
       ->method('acquire')
       ->with('test')
       ->will($this->returnValue(FALSE));
-    $this->lock->expects($this->once())
+    $this->lock->expects($this->at(1))
       ->method('wait')
       ->with('test');
+    $this->lock->expects($this->at(2))
+      ->method('acquire')
+      ->with('test')
+      ->will($this->returnValue(FALSE));
 
     $this->keyValue->expects($this->once())
       ->method('getCollectionName');
@@ -329,21 +340,21 @@ class SharedTempStoreTest extends UnitTestCase {
       ->with('test_2')
       ->will($this->returnValue(TRUE));
 
-    $this->keyValue->expects($this->exactly(3))
+    $this->keyValue->expects($this->at(0))
       ->method('get')
-      ->withConsecutive(
-        ['test_1'],
-        ['test_2'],
-        ['test_3'],
-      )
-      ->willReturnOnConsecutiveCalls(
-        FALSE,
-        $this->ownObject,
-        $this->otherObject,
-      );
-    $this->keyValue->expects($this->once())
+      ->with('test_1')
+      ->will($this->returnValue(FALSE));
+    $this->keyValue->expects($this->at(1))
+      ->method('get')
+      ->with('test_2')
+      ->will($this->returnValue($this->ownObject));
+    $this->keyValue->expects($this->at(2))
       ->method('delete')
       ->with('test_2');
+    $this->keyValue->expects($this->at(3))
+      ->method('get')
+      ->with('test_3')
+      ->will($this->returnValue($this->otherObject));
 
     $this->assertTrue($this->tempStore->deleteIfOwner('test_1'));
     $this->assertTrue($this->tempStore->deleteIfOwner('test_2'));

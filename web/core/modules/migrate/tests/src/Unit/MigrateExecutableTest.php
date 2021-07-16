@@ -408,7 +408,7 @@ class MigrateExecutableTest extends MigrateTestCase {
     foreach ($expected as $key => $value) {
       $this->assertSame($row->getDestinationProperty($key), $value);
     }
-    $this->assertSameSize($expected, $row->getDestination());
+    $this->assertSame(count($expected), count($row->getDestination()));
   }
 
   /**

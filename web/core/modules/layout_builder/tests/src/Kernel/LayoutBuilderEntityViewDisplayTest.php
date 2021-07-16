@@ -83,11 +83,11 @@ class LayoutBuilderEntityViewDisplayTest extends SectionStorageTestBase {
 
     // Set Overridable to TRUE and ensure Layout Builder is enabled.
     $this->sectionStorage->setOverridable();
-    $this->assertTrue($this->sectionStorage->isLayoutBuilderEnabled());
+    $this->assertEquals($this->sectionStorage->isLayoutBuilderEnabled(), TRUE);
 
     // Ensure Layout Builder is still enabled after setting Overridable to FALSE.
     $this->sectionStorage->setOverridable(FALSE);
-    $this->assertTrue($this->sectionStorage->isLayoutBuilderEnabled());
+    $this->assertEquals($this->sectionStorage->isLayoutBuilderEnabled(), TRUE);
   }
 
 }

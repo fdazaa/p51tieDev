@@ -59,7 +59,7 @@ class DownloadFunctionalTest extends BrowserTestBase {
     $result = $executable->import();
 
     // Check that the migration has completed.
-    $this->assertEquals(MigrationInterface::RESULT_COMPLETED, $result);
+    $this->assertEquals($result, MigrationInterface::RESULT_COMPLETED);
 
     /** @var \Drupal\migrate\Plugin\MigrateIdMapInterface $id_map_plugin */
     $id_map_plugin = $migration->getIdMap();

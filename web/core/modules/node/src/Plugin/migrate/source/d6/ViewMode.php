@@ -3,12 +3,7 @@
 namespace Drupal\node\Plugin\migrate\source\d6;
 
 /**
- * Drupal 6 view mode source from database.
- *
- * For available configuration keys, refer to the parent classes.
- *
- * @see \Drupal\migrate\Plugin\migrate\source\SqlBase
- * @see \Drupal\migrate\Plugin\migrate\source\SourcePluginBase
+ * The view mode source.
  *
  * @MigrateSource(
  *   id = "d6_view_mode",

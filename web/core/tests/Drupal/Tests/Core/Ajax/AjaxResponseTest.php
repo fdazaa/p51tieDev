@@ -88,7 +88,7 @@ class AjaxResponseTest extends UnitTestCase {
     );
     $subscriber->onResponse($event);
     $this->assertEquals('text/html; charset=utf-8', $response->headers->get('Content-Type'));
-    $this->assertEquals('<textarea>[]</textarea>', $response->getContent());
+    $this->assertEquals($response->getContent(), '<textarea>[]</textarea>');
   }
 
 }

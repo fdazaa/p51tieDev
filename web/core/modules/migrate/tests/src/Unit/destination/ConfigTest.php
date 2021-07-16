@@ -56,7 +56,7 @@ class ConfigTest extends UnitTestCase {
       ->will($this->returnValue($config));
     $destination = new Config(['config_name' => 'd8_config'], 'd8_config', ['pluginId' => 'd8_config'], $migration, $config_factory, $language_manager);
     $destination_id = $destination->import($row);
-    $this->assertEquals(['d8_config'], $destination_id);
+    $this->assertEquals($destination_id, ['d8_config']);
   }
 
   /**
@@ -106,7 +106,7 @@ class ConfigTest extends UnitTestCase {
       ->will($this->returnValue($config));
     $destination = new Config(['config_name' => 'd8_config', 'translations' => 'true'], 'd8_config', ['pluginId' => 'd8_config'], $migration, $config_factory, $language_manager);
     $destination_id = $destination->import($row);
-    $this->assertEquals(['d8_config', 'mi'], $destination_id);
+    $this->assertEquals($destination_id, ['d8_config', 'mi']);
   }
 
 }

@@ -18,13 +18,13 @@ class UserRoleEntityTest extends KernelTestBase {
       ->grantPermission('a')
       ->grantPermission('c')
       ->save();
-    $this->assertEquals(['a', 'b', 'c'], $role->getPermissions());
+    $this->assertEquals($role->getPermissions(), ['a', 'b', 'c']);
 
     $role->revokePermission('b')->save();
-    $this->assertEquals(['a', 'c'], $role->getPermissions());
+    $this->assertEquals($role->getPermissions(), ['a', 'c']);
 
     $role->grantPermission('b')->save();
-    $this->assertEquals(['a', 'b', 'c'], $role->getPermissions());
+    $this->assertEquals($role->getPermissions(), ['a', 'b', 'c']);
   }
 
 }

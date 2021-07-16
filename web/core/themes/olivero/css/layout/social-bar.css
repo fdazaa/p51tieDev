@@ -67,15 +67,15 @@
     padding-bottom: 5.625rem
 }
 
-    [dir="ltr"] .social-bar__inner.is-fixed {
+    [dir="ltr"] .social-bar__inner.js-fixed {
       left: 0
 }
 
-    [dir="rtl"] .social-bar__inner.is-fixed {
+    [dir="rtl"] .social-bar__inner.js-fixed {
       right: 0
 }
 
-    .social-bar__inner.is-fixed {
+    .social-bar__inner.js-fixed {
       position: fixed;
       top: 6.75rem;
       height: calc(100vh - 6.75rem);

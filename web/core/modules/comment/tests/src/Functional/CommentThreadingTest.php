@@ -134,14 +134,12 @@ class CommentThreadingTest extends CommentTestBase {
    */
   protected function assertParentLink($cid, $pid) {
     // This pattern matches a markup structure like:
-    // @code
     // <a id="comment-2"></a>
     // <article>
     //   <p class="parent">
     //     <a href="...comment-1"></a>
     //   </p>
-    // </article>
-    // @endcode
+    //  </article>
     $pattern = "//article[@id='comment-$cid']//p[contains(@class, 'parent')]//a[contains(@href, 'comment-$pid')]";
 
     $this->assertSession()->elementExists('xpath', $pattern);
@@ -155,12 +153,10 @@ class CommentThreadingTest extends CommentTestBase {
    */
   protected function assertNoParentLink($cid) {
     // This pattern matches a markup structure like:
-    // @code
     // <a id="comment-2"></a>
     // <article>
     //   <p class="parent"></p>
-    // </article>
-    // @endcode
+    //  </article>
 
     $pattern = "//article[@id='comment-$cid']//p[contains(@class, 'parent')]";
     $this->assertSession()->elementNotExists('xpath', $pattern);

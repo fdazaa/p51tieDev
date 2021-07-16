@@ -86,7 +86,7 @@ class MigrateSkipRowTest extends KernelTestBase {
 
     $executable = new MigrateExecutable($migration);
     $result = $executable->import();
-    $this->assertEquals(MigrationInterface::RESULT_COMPLETED, $result);
+    $this->assertEquals($result, MigrationInterface::RESULT_COMPLETED);
 
     $id_map_plugin = $migration->getIdMap();
 

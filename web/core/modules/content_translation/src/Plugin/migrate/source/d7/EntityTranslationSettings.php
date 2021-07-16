@@ -5,12 +5,7 @@ namespace Drupal\content_translation\Plugin\migrate\source\d7;
 use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
 
 /**
- * Drupal 7 Entity Translation settings (variables) from database.
- *
- * For available configuration keys, refer to the parent classes.
- *
- * @see \Drupal\migrate\Plugin\migrate\source\SqlBase
- * @see \Drupal\migrate\Plugin\migrate\source\SourcePluginBase
+ * Drupal 7 Entity Translation settings from variables.
  *
  * @MigrateSource(
  *   id = "d7_entity_translation_settings",

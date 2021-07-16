@@ -150,13 +150,16 @@ class FieldUITest extends FieldTestBase {
     $this->assertSession()->statusCodeEquals(200);
     // Verify that using a boolean field as a filter also results in using the
     // boolean plugin.
-    $this->assertSession()->elementTextEquals('xpath', '//label[@for="edit-options-value-1"]', 'True');
-    $this->assertSession()->elementTextEquals('xpath', '//label[@for="edit-options-value-0"]', 'False');
+    $option = $this->xpath('//label[@for="edit-options-value-1"]');
+    $this->assertEquals(t('True'), $option[0]->getText());
+    $option = $this->xpath('//label[@for="edit-options-value-0"]');
+    $this->assertEquals(t('False'), $option[0]->getText());
 
     // Expose the filter and see if the 'Any' option is added and if we can save
     // it.
     $this->submitForm([], 'Expose filter');
-    $this->assertSession()->elementTextEquals('xpath', '//label[@for="edit-options-value-all"]', '- Any -');
+    $option = $this->xpath('//label[@for="edit-options-value-all"]');
+    $this->assertEquals(t('- Any -'), $option[0]->getText());
     $this->submitForm(['options[value]' => 'All', 'options[expose][required]' => FALSE], 'Apply');
     $this->submitForm([], 'Save');
     $this->drupalGet('/admin/structure/views/nojs/handler/test_view_fieldapi/default/filter/field_boolean_value');

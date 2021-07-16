@@ -111,7 +111,7 @@ class ComposerProjectTemplatesTest extends BuildTestBase {
     // Find all the templates.
     $template_files = Composer::composerSubprojectPaths($root, 'Template');
 
-    $this->assertSameSize($template_files, $data);
+    $this->assertSame(count($template_files), count($data));
 
     // We could have the same number of templates but different names.
     $template_data = [];

@@ -88,8 +88,10 @@ class InstallerTest extends InstallerTestBase {
 
     // Assert that we use the by core supported database drivers by default and
     // not the ones from the driver_test module.
-    $this->assertSession()->elementTextEquals('xpath', '//label[@for="edit-driver-mysql"]', 'MySQL, MariaDB, Percona Server, or equivalent');
-    $this->assertSession()->elementTextEquals('xpath', '//label[@for="edit-driver-pgsql"]', 'PostgreSQL');
+    $elements = $this->xpath('//label[@for="edit-driver-mysql"]');
+    $this->assertEquals('MySQL, MariaDB, Percona Server, or equivalent', current($elements)->getText());
+    $elements = $this->xpath('//label[@for="edit-driver-pgsql"]');
+    $this->assertEquals('PostgreSQL', current($elements)->getText());
 
     parent::setUpSettings();
   }

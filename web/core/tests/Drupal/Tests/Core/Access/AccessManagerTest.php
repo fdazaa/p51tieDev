@@ -147,9 +147,9 @@ class AccessManagerTest extends UnitTestCase {
 
     $this->checkProvider->setChecks($this->routeCollection);
 
-    $this->assertNull($this->routeCollection->get('test_route_1')->getOption('_access_checks'));
-    $this->assertEquals(['test_access_default'], $this->routeCollection->get('test_route_2')->getOption('_access_checks'));
-    $this->assertEquals(['test_access_default'], $this->routeCollection->get('test_route_3')->getOption('_access_checks'));
+    $this->assertEquals($this->routeCollection->get('test_route_1')->getOption('_access_checks'), NULL);
+    $this->assertEquals($this->routeCollection->get('test_route_2')->getOption('_access_checks'), ['test_access_default']);
+    $this->assertEquals($this->routeCollection->get('test_route_3')->getOption('_access_checks'), ['test_access_default']);
   }
 
   /**
@@ -333,12 +333,23 @@ class AccessManagerTest extends UnitTestCase {
     $this->checkProvider->setChecks($this->routeCollection);
     $this->setupAccessArgumentsResolverFactory();
 
-    $this->paramConverter->expects($this->exactly(4))
+    $this->paramConverter->expects($this->at(0))
       ->method('convert')
-      ->willReturnMap([
-        [[RouteObjectInterface::ROUTE_NAME => 'test_route_2', RouteObjectInterface::ROUTE_OBJECT => $this->routeCollection->get('test_route_2')], []],
-        [['value' => 'example', RouteObjectInterface::ROUTE_NAME => 'test_route_4', RouteObjectInterface::ROUTE_OBJECT => $this->routeCollection->get('test_route_4')], ['value' => 'example']],
-      ]);
+      ->with([RouteObjectInterface::ROUTE_NAME => 'test_route_2', RouteObjectInterface::ROUTE_OBJECT => $this->routeCollection->get('test_route_2')])
+      ->will($this->returnValue([]));
+    $this->paramConverter->expects($this->at(1))
+      ->method('convert')
+      ->with([RouteObjectInterface::ROUTE_NAME => 'test_route_2', RouteObjectInterface::ROUTE_OBJECT => $this->routeCollection->get('test_route_2')])
+      ->will($this->returnValue([]));
+
+    $this->paramConverter->expects($this->at(2))
+      ->method('convert')
+      ->with(['value' => 'example', RouteObjectInterface::ROUTE_NAME => 'test_route_4', RouteObjectInterface::ROUTE_OBJECT => $this->routeCollection->get('test_route_4')])
+      ->will($this->returnValue(['value' => 'example']));
+    $this->paramConverter->expects($this->at(3))
+      ->method('convert')
+      ->with(['value' => 'example', RouteObjectInterface::ROUTE_NAME => 'test_route_4', RouteObjectInterface::ROUTE_OBJECT => $this->routeCollection->get('test_route_4')])
+      ->will($this->returnValue(['value' => 'example']));
 
     // Tests the access with routes with parameters without given request.
     $this->assertEquals(TRUE, $this->accessManager->checkNamedRoute('test_route_2', [], $this->account));

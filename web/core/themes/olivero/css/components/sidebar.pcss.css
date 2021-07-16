@@ -1,13 +1,11 @@
 /**
  * @file
- * Styles for menu placed in sidebar region.
+ * Styles for sidebar region.
  */
 
-@import "../../base/variables.pcss.css";
+@import "../base/variables.pcss.css";
 
-.menu--sidebar {
-  list-style: none;
-
+.region--sidebar {
   & .menu {
     list-style: none;
   }

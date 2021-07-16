@@ -582,7 +582,7 @@ class EntityDefinitionUpdateTest extends EntityKernelTestBase {
       ->orderBy('langcode', 'ASC')
       ->execute()
       ->fetchAll(\PDO::FETCH_ASSOC);
-    $this->assertSameSize($expected, $result);
+    $this->assertCount(count($expected), $result);
 
     // Use assertEquals and not assertSame here to prevent that a different
     // sequence of the columns in the table will affect the check.
@@ -622,7 +622,7 @@ class EntityDefinitionUpdateTest extends EntityKernelTestBase {
         ->orderBy('langcode', 'ASC')
         ->execute()
         ->fetchAll(\PDO::FETCH_ASSOC);
-      $this->assertSameSize($expected, $result);
+      $this->assertCount(count($expected), $result);
 
       // Use assertEquals and not assertSame here to prevent that a different
       // sequence of the columns in the table will affect the check.

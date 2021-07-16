@@ -113,15 +113,17 @@ class ModuleHandlerTest extends UnitTestCase {
       ])
       ->setMethods(['load'])
       ->getMock();
-    $module_handler->expects($this->exactly(3))
+    // First reload.
+    $module_handler->expects($this->at(0))
       ->method('load')
-      ->withConsecutive(
-        // First reload.
-        ['module_handler_test'],
-        // Second reload.
-        ['module_handler_test'],
-        ['module_handler_test_added'],
-      );
+      ->with($this->equalTo('module_handler_test'));
+    // Second reload.
+    $module_handler->expects($this->at(1))
+      ->method('load')
+      ->with($this->equalTo('module_handler_test'));
+    $module_handler->expects($this->at(2))
+      ->method('load')
+      ->with($this->equalTo('module_handler_test_added'));
     $module_handler->reload();
     $module_handler->addModule('module_handler_test_added', 'core/tests/Drupal/Tests/Core/Extension/modules/module_handler_test_added');
     $module_handler->reload();
@@ -185,7 +187,7 @@ class ModuleHandlerTest extends UnitTestCase {
     $module_handler->expects($this->once())->method('resetImplementations');
 
     // Make sure we're starting empty.
-    $this->assertEquals([], $module_handler->getModuleList());
+    $this->assertEquals($module_handler->getModuleList(), []);
 
     // Replace the list with a prebuilt list.
     $module_handler->setModuleList($fixture_module_handler->getModuleList());

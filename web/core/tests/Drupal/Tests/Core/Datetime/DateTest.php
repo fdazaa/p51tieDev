@@ -185,12 +185,16 @@ class DateTest extends UnitTestCase {
 
     // Mocks the formatDiff function of the dateformatter object.
     $this->dateFormatterStub
-      ->expects($this->exactly(2))
+      ->expects($this->at(0))
       ->method('formatDiff')
-      ->willReturnMap([
-        [$timestamp, $request_time, $options, $expected],
-        [$timestamp, $request_time, $options + ['return_as_object' => TRUE], new FormattedDateDiff('1 second', 1)],
-      ]);
+      ->with($timestamp, $request_time, $options)
+      ->will($this->returnValue($expected));
+
+    $this->dateFormatterStub
+      ->expects($this->at(1))
+      ->method('formatDiff')
+      ->with($timestamp, $request_time, $options + ['return_as_object' => TRUE])
+      ->will($this->returnValue(new FormattedDateDiff('1 second', 1)));
 
     $request = Request::createFromGlobals();
     $request->server->set('REQUEST_TIME', $request_time);
@@ -218,12 +222,16 @@ class DateTest extends UnitTestCase {
 
     // Mocks the formatDiff function of the dateformatter object.
     $this->dateFormatterStub
-      ->expects($this->exactly(2))
+      ->expects($this->at(0))
       ->method('formatDiff')
-      ->willReturnMap([
-        [$request_time, $timestamp, $options, $expected],
-        [$request_time, $timestamp, $options + ['return_as_object' => TRUE], new FormattedDateDiff('1 second', 1)],
-      ]);
+      ->with($request_time, $timestamp, $options)
+      ->will($this->returnValue($expected));
+
+    $this->dateFormatterStub
+      ->expects($this->at(1))
+      ->method('formatDiff')
+      ->with($request_time, $timestamp, $options + ['return_as_object' => TRUE])
+      ->will($this->returnValue(new FormattedDateDiff('1 second', 1)));
 
     $request = Request::createFromGlobals();
     $request->server->set('REQUEST_TIME', $request_time);

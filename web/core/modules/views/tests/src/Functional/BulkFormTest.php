@@ -132,7 +132,8 @@ class BulkFormTest extends BrowserTestBase {
 
     // Check the default title.
     $this->drupalGet('test_bulk_form');
-    $this->assertSession()->elementTextEquals('xpath', '//label[@for="edit-action"]', 'Action');
+    $result = $this->xpath('//label[@for="edit-action"]');
+    $this->assertEquals('Action', $result[0]->getText());
 
     // Setup up a different bulk form title.
     $view = Views::getView('test_bulk_form');
@@ -141,7 +142,8 @@ class BulkFormTest extends BrowserTestBase {
     $view->save();
 
     $this->drupalGet('test_bulk_form');
-    $this->assertSession()->elementTextEquals('xpath', '//label[@for="edit-action"]', 'Test title');
+    $result = $this->xpath('//label[@for="edit-action"]');
+    $this->assertEquals('Test title', $result[0]->getText());
 
     $this->drupalGet('test_bulk_form');
     // Call the node delete action.
@@ -195,7 +197,7 @@ class BulkFormTest extends BrowserTestBase {
 
     // Test that the bulk form works when multiple nodes are selected
     // but all of the selected nodes are already deleted
-    // by another user before the loaded bulk form was submitted.
+    //  by another user before the loaded bulk form was submitted.
     $this->drupalGet('test_bulk_form');
     // Call the node delete action.
     foreach ($nodes as $key => $node) {

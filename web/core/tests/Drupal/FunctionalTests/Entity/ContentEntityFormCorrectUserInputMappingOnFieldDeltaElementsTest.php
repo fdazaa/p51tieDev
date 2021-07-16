@@ -114,10 +114,10 @@ class ContentEntityFormCorrectUserInputMappingOnFieldDeltaElementsTest extends B
 
     // Assert that after rearranging the field items the user input will be
     // mapped on the correct delta field items.
-    $this->assertEquals([
+    $this->assertEquals($entity->get($this->fieldName)->getValue(), [
       ['shape' => 'circle', 'color' => 'blue'],
       ['shape' => 'rectangle', 'color' => 'green'],
-    ], $entity->get($this->fieldName)->getValue());
+    ]);
   }
 
 }

@@ -348,7 +348,7 @@ class EntityStateChangeValidationTest extends KernelTestBase {
     ]);
     $this->assertTrue($node->isNew());
     $violations = $node->validate();
-    $this->assertSameSize($messages, $violations);
+    $this->assertCount(count($messages), $violations);
     foreach ($messages as $i => $message) {
       $this->assertEquals($message, $violations->get($i)->getMessage());
     }

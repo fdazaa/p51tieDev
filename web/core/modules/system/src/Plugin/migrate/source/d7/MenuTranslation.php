@@ -5,12 +5,7 @@ namespace Drupal\system\Plugin\migrate\source\d7;
 use Drupal\system\Plugin\migrate\source\Menu;
 
 /**
- * Drupal 7 i18n menu translation source from database.
- *
- * For available configuration keys, refer to the parent classes.
- *
- * @see \Drupal\migrate\Plugin\migrate\source\SqlBase
- * @see \Drupal\migrate\Plugin\migrate\source\SourcePluginBase
+ * Menu translation source from database.
  *
  * @MigrateSource(
  *   id = "d7_menu_translation",

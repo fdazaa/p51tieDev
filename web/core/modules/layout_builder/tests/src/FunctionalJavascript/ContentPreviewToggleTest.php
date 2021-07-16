@@ -153,7 +153,7 @@ class ContentPreviewToggleTest extends WebDriverTestBase {
       return strpos($block_text, $items[$key]) !== FALSE;
     }, ARRAY_FILTER_USE_BOTH);
 
-    $this->assertSameSize($items, $blocks_with_expected_text);
+    $this->assertCount(count($items), $blocks_with_expected_text);
   }
 
 }

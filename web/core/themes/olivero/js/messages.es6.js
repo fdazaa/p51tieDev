@@ -1,11 +1,11 @@
 /**
  * @file
- * Customization of messages.
+ * Messages.
  */
 
 ((Drupal, once) => {
   /**
-   * Adds a close button to the message.
+   * Adds close button to the message.
    *
    * @param {object} message
    *   The message object.
@@ -108,12 +108,7 @@
   };
 
   /**
-   * Get messages from context.
-   *
-   * @type {Drupal~behavior}
-   *
-   * @prop {Drupal~behaviorAttach} attach
-   *   Attaches the close button behavior for messages.
+   * Getting messages from context.
    */
   Drupal.behaviors.messages = {
     attach(context) {

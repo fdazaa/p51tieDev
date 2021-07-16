@@ -75,7 +75,6 @@ class FieldOptionTranslation extends Field {
       [
         'language' => ['type' => 'string'],
         'property' => ['type' => 'string'],
-        'bundle' => ['type' => 'string'],
       ];
   }
 

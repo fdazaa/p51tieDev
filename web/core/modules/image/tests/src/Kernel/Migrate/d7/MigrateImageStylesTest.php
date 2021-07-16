@@ -58,7 +58,7 @@ class MigrateImageStylesTest extends MigrateDrupal7TestBase {
 
     // Check the number of effects associated with the style.
     $effects = $style->getEffects();
-    $this->assertSameSize($expected_effect_plugins, $effects);
+    $this->assertSame(count($expected_effect_plugins), count($effects));
 
     $index = 0;
     foreach ($effects as $effect) {

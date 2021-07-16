@@ -106,7 +106,8 @@ class FileFieldWidgetTest extends FileFieldTestBase {
     $this->assertSession()->buttonExists('Upload');
     // Test label has correct 'for' attribute.
     $input = $this->assertSession()->fieldExists("files[{$field_name}_0]");
-    $this->assertSession()->elementExists('xpath', '//label[@for="' . $input->getAttribute('id') . '"]');
+    $label = $this->xpath('//label[@for="' . $input->getAttribute('id') . '"]');
+    $this->assertTrue(isset($label[0]), 'Label for upload found.');
 
     // Save the node and ensure it does not have the file.
     $this->submitForm([], 'Save');
@@ -225,7 +226,7 @@ class FileFieldWidgetTest extends FileFieldTestBase {
     // Try to upload multiple files, but fewer than the maximum.
     $nid = $this->uploadNodeFiles($upload_files_node_creation, $field_name, $type_name, TRUE, []);
     $node = $node_storage->loadUnchanged($nid);
-    $this->assertSameSize($upload_files_node_creation, $node->{$field_name}, 'Node was successfully saved with multiple files.');
+    $this->assertSame(count($upload_files_node_creation), count($node->{$field_name}), 'Node was successfully saved with multiple files.');
 
     // Try to upload exactly the allowed number of files on revision.
     $this->uploadNodeFile($test_file, $field_name, $node->id(), 1, [], TRUE);

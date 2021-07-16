@@ -17,14 +17,10 @@
   color: var(--color--gray-20);
   font-size: var(--font-size-s);
   font-weight: 600;
-  line-height: 1.6;
+  line-height: 2;
 
   &:after {
     content: ":";
-  }
-
-  @media (--md) {
-    line-height: 2;
   }
 }
 

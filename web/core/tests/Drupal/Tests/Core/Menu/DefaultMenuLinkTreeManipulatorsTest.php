@@ -291,15 +291,15 @@ class DefaultMenuLinkTreeManipulatorsTest extends UnitTestCase {
     ]);
 
     $query = $this->createMock('Drupal\Core\Entity\Query\QueryInterface');
-    $query->expects($this->once())
+    $query->expects($this->at(0))
       ->method('accessCheck')
       ->with(TRUE);
-    $query->expects($this->exactly(2))
+    $query->expects($this->at(1))
       ->method('condition')
-      ->withConsecutive(
-        ['nid', [1, 2, 3, 4]],
-        ['status', NodeInterface::PUBLISHED],
-      );
+      ->with('nid', [1, 2, 3, 4]);
+    $query->expects($this->at(2))
+      ->method('condition')
+      ->with('status', NodeInterface::PUBLISHED);
     $query->expects($this->once())
       ->method('execute')
       ->willReturn([1, 2, 4]);
@@ -328,13 +328,14 @@ class DefaultMenuLinkTreeManipulatorsTest extends UnitTestCase {
     // access checkers.
 
     // Ensure that the access manager is just called for the non-node routes.
-    $this->accessManager->expects($this->exactly(2))
+    $this->accessManager->expects($this->at(0))
       ->method('checkNamedRoute')
       ->with('test_route', [], $this->currentUser, TRUE)
-      ->willReturnOnConsecutiveCalls(
-        AccessResult::allowed(),
-        AccessResult::neutral(),
-      );
+      ->willReturn(AccessResult::allowed());
+    $this->accessManager->expects($this->at(1))
+      ->method('checkNamedRoute')
+      ->with('test_route', [], $this->currentUser, TRUE)
+      ->willReturn(AccessResult::neutral());
     $tree = $this->defaultMenuTreeManipulators->checkAccess($tree);
 
     $this->assertEquals($node_access_result, $tree[1]->access);

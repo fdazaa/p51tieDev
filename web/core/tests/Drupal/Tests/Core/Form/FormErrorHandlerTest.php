@@ -48,16 +48,24 @@ class FormErrorHandlerTest extends UnitTestCase {
    * @covers ::displayErrorMessages
    */
   public function testDisplayErrorMessages() {
-    $this->messenger->expects($this->exactly(6))
+    $this->messenger->expects($this->at(0))
       ->method('addMessage')
-      ->withConsecutive(
-        ['invalid', 'error'],
-        ['invalid', 'error'],
-        ['invalid', 'error'],
-        ['no title given', 'error'],
-        ['element is invisible', 'error'],
-        ['this missing element is invalid', 'error'],
-      );
+      ->with('invalid', 'error');
+    $this->messenger->expects($this->at(1))
+      ->method('addMessage')
+      ->with('invalid', 'error');
+    $this->messenger->expects($this->at(2))
+      ->method('addMessage')
+      ->with('invalid', 'error');
+    $this->messenger->expects($this->at(3))
+      ->method('addMessage')
+      ->with('no title given', 'error');
+    $this->messenger->expects($this->at(4))
+      ->method('addMessage')
+      ->with('element is invisible', 'error');
+    $this->messenger->expects($this->at(5))
+      ->method('addMessage')
+      ->with('this missing element is invalid', 'error');
 
     $form = [
       '#parents' => [],
