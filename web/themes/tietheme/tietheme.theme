@@ -29,6 +29,27 @@ function tietheme_get_active_theme() {
 }
 
 /**
-function tietheme_preprocess_menus(&$menu_name) {
-  dpm($menu_name, 'IMPRIME VARIABLES');
-}*/
+*function tietheme_preprocess_menus(&$menu_name) {
+*  dpm($menu_name, 'IMPRIME VARIABLES');
+*}*/
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function tietheme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+  if (\Drupal::currentUser()->isAuthenticated()){
+    $suggestions[] = 'page__autenticado';
+  }
+    //dpm($suggestions, 'suggestions');
+}
+
+
+// // Get actual user role.
+// $current_user_roles = \Drupal::currentUser()->getRoles();
+
+// // Check if user is not admin.
+// if (!in_array('administrator', $current_user_roles)) {}
+
+// // Check if user is an admin.
+// if (in_array('administrator', $current_user_roles)) {}

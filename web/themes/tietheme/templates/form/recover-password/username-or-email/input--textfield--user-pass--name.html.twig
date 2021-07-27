@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+<div class="tw-relative tw-flex tw-flex-col tw-min-w-0 tw-break-words tw-w-full tw-mb-6 tw-shadow-lg tw-rounded-lg tw-bg-white border-0">
+  <input type="email"
+         class="tw-border-t tw-border-r tw-border-b tw-border-l tw-border-gray-500 tw-px-3 tw-py-3
+         tw-placeholder-gray-400 tw-text-gray-700 tw-bg-white tw-rounded tw-text-sm tw-shadow focus:tw-outline-none focus:tw-ring tw-w-full"
+         placeholder="Email"
+         style="transition: all 0.15s ease 0s;"{{ attributes }} />{{ children }}
+</div>

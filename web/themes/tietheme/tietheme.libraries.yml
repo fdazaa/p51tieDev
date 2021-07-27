@@ -2,3 +2,8 @@ global-styling:
   css:
     base:
       public/css/globalstyles.css: {}
+      public/css/form.css: {}
+  js:
+      //cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js: {type: external}
+      # //code.jquery.com/jquery-1.12.0.min.js: {type: external}
+ 
