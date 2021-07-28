@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '255639b0447cbfdd27197adabed3914132e754c5',
+        'reference' => 'ce028cd1fd742939499e862ffdd14e68d34b6d7d',
         'name' => 'drupal/recommended-project',
         'dev' => true,
     ),
@@ -739,6 +739,15 @@
                 0 => '9.2.0',
             ),
         ),
+        'drupal/ginvite' => array(
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/ginvite',
+            'aliases' => array(),
+            'reference' => '2.0.0',
+            'dev_requirement' => false,
+        ),
         'drupal/group' => array(
             'pretty_version' => '1.4.0',
             'version' => '1.4.0.0',
@@ -991,7 +1000,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '255639b0447cbfdd27197adabed3914132e754c5',
+            'reference' => 'ce028cd1fd742939499e862ffdd14e68d34b6d7d',
             'dev_requirement' => false,
         ),
         'drupal/reference_table_formatter' => array(
