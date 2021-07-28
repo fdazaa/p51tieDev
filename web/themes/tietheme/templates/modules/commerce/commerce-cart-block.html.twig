@@ -1,0 +1,20 @@
+<div class="lg:tw-mr-7"{{ attributes}}>
+  <div class="cart-block--summary tw-relative" style=" z-index: 0;">
+    <a class="cart-block--link__expand" href="{{ url }}">
+      <span class="cart-block--summary__icon"><img alt="" class="tw-self-center tw-h-8" src="/themes/tietheme/img/shopping-car.svg" width="tw-auto" /></span>
+      <span class="cart-block--summary__count tw-absolute tw-w-5" style="top: -0.4rem;right: -1rem;z-index: 6;left: 1.4rem;"><div class="tw-bg-gray-500 tw-text-white tw-text-sm tw-flex tw-items-center tw-rounded-full tw-justify-center tw-h-5 tw-w-5">{{ count }}</div></span>
+    </a>
+  </div>
+  {% if content %}
+  <div class="cart-block--contents">
+    <div class="cart-block--contents__inner">
+      <div class="cart-block--contents__items">
+        {{ content }}
+      </div>
+      <div class="cart-block--contents__links">
+        {{ links }}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>

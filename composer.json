@@ -25,6 +25,8 @@
         "drupal/cshs": "^3.3",
         "drupal/epayco": "^1.5",
         "drupal/field_group": "^3.1",
+        "drupal/fontawesome": "^2.19",
+        "drupal/fontawesome_menu_icons": "^1.9",
         "drupal/formdazzle": "^2.1",
         "drupal/forms_steps": "^1.5",
         "drupal/hide_revision_field": "^2.2",

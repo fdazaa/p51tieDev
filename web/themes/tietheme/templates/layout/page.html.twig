@@ -39,108 +39,96 @@
  */
 #}
 <section class="tw-skewed-bottom-right tw-h-full">
-  <nav class="tw-relative tw-px-2 md:tw-px-5 lg:tw-px-6 tw-py-2 md:tw-py-5 lg:tw-py-6 tw-flex tw-justify-between tw-items-center
-    tw-bg-white-50 tw-shadow-lg">
+	<nav class="tw-h-14 lg:tw-h-16 tw-items-center tw-top-0 tw-inset-x-0 tw-z-50 md:tw-px-5 lg:tw-px-6 md:tw-py-5 lg:tw-py-6 tw-flex tw-justify-between tw-shadow-lg tw-fixed" 
+		style=" background: white;">
+		{# este es el logo #}
+		{% if page.header_logo %}
+			<a class="tw-text-3xl tw-font-bold tw-leading-none" href="/">
+				{{ page.header_logo }}
+			</a>
+		{% endif %}
+		
+		{# este es el menu #}
+		{% if page.header_menu %}
+			<ul class="tw-hidden tw-top-1/2 tw-left-1/2 tw-transform tw--translate-y-50% lg:tw-mx-auto lg:tw-flex lg:tw-items-center lg:tw-w-auto lg:tw-space-x-6 tw--translate-x-50%">
+				{{ page.header_menu }}
+			</ul>
+		{% endif %}
+		
+		<div class="tw-flex tw-items-center">
+			{% if page.header_cart %}
+				{{ page.header_cart }}
+			{% endif %}
 
+			{# Estos son los accesos #}						
+			{% if page.header_accesos %}
+				{{ page.header_accesos }}
+			{% endif %}
 
-    {# este es el logo #}
-    {% if page.header_logo %}
-    <a class="tw-text-3xl tw-font-bold tw-leading-none" href="/drupal9/recommended-project/web/">
-      {{ page.header_logo }}
-    </a>
-    {% endif %}
+			{# Este es el icono hamburguesa #}
+			{% if page.header_iconomenumovil %}
+				{{ page.header_iconomenumovil }}
+			{% endif %}
+		</div>
+		{# hamburger icon #}
+		{# <div class="tw-block lg:tw-hidden">
+			<button class="tw-cursor-pointer tw-text-xl tw-leading-none tw-px-3 tw-py-1 border tw-border-solid tw-border-transparent tw-rounded tw-bg-transparent tw-block lg:tw-hidden tw-outline-none focus:tw-outline-none"
+            	type="button" onclick="toggleNavbar('example-collapse-navbar')">
+				<svg class="tw-block tw-h-4 tw-w-4 tw-fill-current" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<title>Mobile menu</title>
+					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+				</svg>
+			</button>
+		</div> #}
+		{# Este es el menu desplegable para movil #}
+		
+	</nav>
+		
+	{% if logged_in %}
+			{% if page.sidebar_left %}
+				<aside id="scrollaside" class="tw-bg-gray-800 tw-w-3/4 tw-hidden sm:tw-block tw-fixed tw-inset-y-0 tw-overflow-x-hidden tw-overflow-y-auto lg:tw-w-64 sm:tw-max-w-xs tw-mt-16">
+					<div class="tw-px-4 tw-pt-4 tw-pb-6 tw-h-full">
+						{{page.sidebar_left}}
+					</div>
+				</aside>
+			{% endif %}
+		{% else %}
+		
+	{% endif %}
 
+	{% if logged_in %}
+			{% if page.content %}
+				<main class="lg:tw-ml-72 lg:tw-mt-16">	
+					<div class="tw-bg-gray-50 tw-p-12 radius-for-skewed tw-m-0 tw-w-full">	
+						<div class="tw-container">
+							{{ page.content }}
+						</div>
+					</div>
+				</main>		
+			{% endif %}
+		{% else %}
+		
+			{% if page.content %}
+				<div class="tw-bg-gray-50 lg:tw-p-12 radius-for-skewed tw-mt-24 lg:tw-m-0 tw-w-full">
+					<div class="tw-container">
+						{{ page.content }}
+					</div>
+				</div>
+			{% endif %}		
+	{% endif %}		
+	
+	{% if page.header_menumovil %}
+		<div class="tw-transition tw-delay-150 tw-duration-300 tw-ease-in-out lg:tw-hidden navbar-menu tw-relative tw-z-50 hidden block" id="example-collapse-navbar">
+			<div class="navbar-backdrop tw-w-5/6 tw-fixed tw-inset-0 tw-bg-gray-800 tw-opacity-25"></div>
+			<nav class="tw-fixed tw-top-0 tw-left-0 tw-bottom-0 tw-bg-gray-800 tw-flex tw-flex-col tw-w-5/6 tw-max-w-sm tw-py-6 tw-px-6 tw-border-r tw-overflow-y-auto">
+				{{ page.header_menumovil }}
+			</nav>
+		</div>
+	{% endif %}
 
-    {# hamburger icon #}
-    <div class="tw-hidden lg:tw-hidden">
-      <button class="tw-navbar-burger tw-flex tw-items-center tw-text-gray-400 tw-p-3">
-        <svg class="tw-block tw-h-4 tw-w-4 tw-fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <title>Mobile menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-        </svg>
-      </button>
-    </div>
+	{% if page.header_footer %}
+		{{ page.footer }}
+	{% endif %}
 
-
-      {# este es el menu #}
-    {% if page.header_menu %}
-    <ul class="tw-hidden tw-top-1/2 tw-left-1/2 tw-transform tw--translate-y-50% lg:tw-flex lg:tw-mx-auto lg:tw-flex lg:tw-items-center lg:tw-w-auto lg:tw-space-x-6 tw--translate-x-50%">
-      {{ page.header_menu }}
-    </ul>
-    {% endif %}
-
-
-      {# Estos son los accesos #}
-    {% if page.header_accesos %}
-    {{ page.header_accesos }}
-    {% endif %}
-
-  </nav>
-
-
-
-
-    {# Este es el contenido #}
-  <div class="tw-bg-gray-50 tw-pt-12 tw-pb-20 radius-for-skewed tw-m-0">
-    {% if page.content %}
-    <div class="tw-container lg:tw-ml-40">
-      {{ page.content }}
-    </div>
-    {% endif %}
-
-  </div>
-    <div class="tw-hidden tw-navbar-menu tw-relative z-50">
-    <div class="tw-navbar-backdrop fixed inset-0 tw-bg-gray-800 opacity-25"></div>
-    <nav class="fixed top-0 left-0 bottom-0 tw-flex tw-flex-col tw-w-5/6 max-w-sm tw-py-6 tw-px-6 tw-bg-white border-r overflow-y-auto">
-      <div class="tw-flex tw-items-center tw-mb-8">
-        <a class="tw-mr-auto tw-text-3xl tw-font-bold tw-leading-none" href="#">
-          <img class="tw-h-10" src="atis-assets/logo/atis/atis-mono-black.svg" alt="" width="auto">
-        </a>
-        <button class="tw-navbar-close">
-          <svg class="tw-h-6 tw-w-6 tw-text-gray-400 cursor-pointer hover:tw-text-gray-500" xmlns="http://www.w3.org/2000/svg"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-      <div>
-        <ul>
-          <li class="mb-1"><a class="block tw-p-4 tw-text-sm tw-font-semibold tw-text-gray-400 hover:tw-bg-green-50 hover:tw-text-green-600
-            rounded" href="#">Start</a></li>
-          <li class="mb-1"><a class="block tw-p-4 tw-text-sm tw-font-semibold tw-text-gray-400 hover:tw-bg-green-50 hover:tw-text-green-600
-            rounded" href="#">About Us</a></li>
-          <li class="mb-1"><a class="block tw-p-4 tw-text-sm tw-font-semibold tw-text-gray-400 hover:tw-bg-green-50 hover:tw-text-green-600
-            rounded" href="#">Services</a></li>
-          <li class="mb-1"><a class="block tw-p-4 tw-text-sm tw-font-semibold tw-text-gray-400 hover:tw-bg-green-50 hover:tw-text-green-600
-            rounded" href="#">Platform</a></li>
-          <li class="mb-1"><a class="block tw-p-4 tw-text-sm tw-font-semibold tw-text-gray-400 hover:tw-bg-green-50 hover:tw-text-green-600
-            rounded" href="#">Testimonials</a></li>
-        </ul>
-      </div>
-      <div class="mt-auto">
-        <div class="tw-pt-6">
-          <a class="block tw-px-4 tw-py-3 tw-mb-3 tw-leading-loose tw-text-xs tw-text-center tw-font-semibold
-           tw-leading-none tw-bg-gray-50 hover:tw-bg-gray-100 tw-rounded-l-xl tw-rounded-t-xl" href="#">Sign In</a>
-          <a class="block tw-px-4 tw-py-3 tw-mb-2 tw-leading-loose tw-text-xs tw-text-center tw-text-white tw-font-semibold
-           tw-bg-green-600 hover:tw-bg-green-700 tw-rounded-l-xl tw-rounded-t-xl" href="#">Sign Up</a>
-        </div>
-        <p class="tw-my-4 tw-text-xs tw-text-center tw-text-gray-400">
-            <span>© 2021 All rights reserved.</span>
-        </p>
-        <a class="tw-inline-block tw-px-1" href="#"> <img src="atis-assets/social/facebook.svg" alt=""> </a>
-        <a class="tw-inline-block tw-px-1" href="#"> <img src="atis-assets/social/twitter.svg" alt=""> </a>
-        <a class="tw-inline-block tw-px-1" href="#"> <img src="atis-assets/social/instagram.svg" alt=""> </a>
-      </div>
-    </nav>
-  </div>
-       {% if page.header_footer %}
-        {{ page.footer }}
-        {% endif %}
 </section>
-
-
-
-
-
-
 

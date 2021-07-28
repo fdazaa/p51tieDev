@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see https://twig.symfony.com/doc/1.x/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul class="tw-hidden md:tw-block lg:tw-block tw-row-reverse tw-w-20% tw-justify-items-center tw-space-x-4"{{ attributes }}>
+    {% else %}
+      <ul>
+    {% endif %}
+    {% for item in items %}
+      <li class="tw-inline-block lg:tw-mb-0 tw-w-full lg:tw-w-auto md:tw-py-3 lg:tw-py-2 tw-px-3 md:tw-px-3 lg:tw-px-6
+            tw-leading-loose tw-bg-green-600 hover:tw-bg-green-700 tw-text-white md:tw-text-xl tw-font-semibold tw-rounded-l-xl tw-rounded-t-xl
+            tw-transition tw-duration-200"{{ item.attributes }}>
+        {{ link(item.title, item.url) }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

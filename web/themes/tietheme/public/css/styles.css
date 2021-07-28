@@ -1,0 +1,66 @@
+/* SCROLL DE SIDEBAR PARA LOGUEADO*/
+
+/* width */
+#scrollaside::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+#scrollaside::-webkit-scrollbar-track {
+    border-radius: 10px;
+ }
+   
+  /* Handle */
+#scrollaside::-webkit-scrollbar-thumb {
+    background: #737373; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+#scrollaside::-webkit-scrollbar-thumb:hover {
+    background: #4c4c4c; 
+  }
+/* FIN SCROLL DE SIDEBAR PARA LOGUEADO*/
+
+/* ICONO BURGER MENU MOVIL*/
+  .icon-menu-movil {
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    height: 21px;
+    width: 24px;
+  }
+  .icon-menu-movil > span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 37px;
+    background-color: #fff;
+    
+  }
+  .icon-menu-movil > span:nth-child(1) {
+    top: 0px;
+    transform-origin: right bottom;
+  }
+  .icon-menu-movil > span:nth-child(2) {
+    top: 14px;
+  }
+  .icon-menu-movil > span:nth-child(3) {
+    top: 28px;
+    transform-origin: right top;
+  }
+  .icon-menu-movil.active > span:nth-child(1) {
+    transform: rotate(-45deg);
+    left: -4px;
+    transition: left 1.6s;
+  }
+  .icon-menu-movil.active > span:nth-child(2) {
+    opacity: 0;
+  }
+  .icon-menu-movil.active > span:nth-child(3) {
+    transform: rotate(45deg);
+    left: -4px;
+    transition: left 1.6s;
+  }
+/* END ICONO BURGER MENU MOVIL*/

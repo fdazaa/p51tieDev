@@ -2,3 +2,9 @@ global-styling:
   css:
     base:
       public/css/globalstyles.css: {}
+      public/css/styles.css: {}
+      public/css/form.css: {}
+      //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css: {type: external}
+  js:
+      public/js/menuhamburguesa.js: {}
+      //cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js: {type: external}
