@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '7c259da1f0002f433d97c63a2cd1ed8a6a597f75',
+        'reference' => '255639b0447cbfdd27197adabed3914132e754c5',
         'name' => 'drupal/recommended-project',
         'dev' => true,
     ),
@@ -739,6 +739,15 @@
                 0 => '9.2.0',
             ),
         ),
+        'drupal/group' => array(
+            'pretty_version' => '1.4.0',
+            'version' => '1.4.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/group',
+            'aliases' => array(),
+            'reference' => '8.x-1.4',
+            'dev_requirement' => false,
+        ),
         'drupal/hal' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -982,7 +991,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '7c259da1f0002f433d97c63a2cd1ed8a6a597f75',
+            'reference' => '255639b0447cbfdd27197adabed3914132e754c5',
             'dev_requirement' => false,
         ),
         'drupal/reference_table_formatter' => array(
@@ -1160,6 +1169,15 @@
             'replaced' => array(
                 0 => '9.2.0',
             ),
+        ),
+        'drupal/variationcache' => array(
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/variationcache',
+            'aliases' => array(),
+            'reference' => '8.x-1.0',
+            'dev_requirement' => false,
         ),
         'drupal/views' => array(
             'dev_requirement' => false,
