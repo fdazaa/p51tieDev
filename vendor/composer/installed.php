@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'abb6dceb7378e5de58ed2797002e595cf3c2f043',
+        'reference' => '7c259da1f0002f433d97c63a2cd1ed8a6a597f75',
         'name' => 'drupal/recommended-project',
         'dev' => true,
     ),
@@ -297,6 +297,15 @@
             'replaced' => array(
                 0 => '9.2.0',
             ),
+        ),
+        'drupal/business_rules' => array(
+            'pretty_version' => '2.0.0-beta1',
+            'version' => '2.0.0.0-beta1',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/business_rules',
+            'aliases' => array(),
+            'reference' => '2.0.0-beta1',
+            'dev_requirement' => false,
         ),
         'drupal/ckeditor' => array(
             'dev_requirement' => false,
@@ -594,6 +603,15 @@
             'replaced' => array(
                 0 => '9.2.0',
             ),
+        ),
+        'drupal/dbug' => array(
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/dbug',
+            'aliases' => array(),
+            'reference' => '2.0.0',
+            'dev_requirement' => false,
         ),
         'drupal/dynamic_page_cache' => array(
             'dev_requirement' => false,
@@ -964,7 +982,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'abb6dceb7378e5de58ed2797002e595cf3c2f043',
+            'reference' => '7c259da1f0002f433d97c63a2cd1ed8a6a597f75',
             'dev_requirement' => false,
         ),
         'drupal/reference_table_formatter' => array(
