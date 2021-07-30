@@ -1193,8 +1193,4 @@ class Quiz extends EditorialContentEntityBase implements EntityChangedInterface,
 
   
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> develop-1.5
