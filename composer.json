@@ -24,6 +24,7 @@
         "drupal/core-project-message": "9.2",
         "drupal/core-recommended": "9.2",
         "drupal/cshs": "^3.3",
+        "drupal/devel": "^4.1",
         "drupal/epayco": "^1.5",
         "drupal/field_group": "^3.1",
         "drupal/fontawesome": "^2.19",
