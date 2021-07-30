@@ -639,18 +639,8 @@ class Quiz extends EditorialContentEntityBase implements EntityChangedInterface,
     $groups =!empty($ids) ? $storage->loadMultiple($ids):[];
 
     $total_questions = [];
-<<<<<<< HEAD
 
     foreach($groups as $group){
-=======
-	  $questions_alto = [];
-	  $questions_medio = [];
-	  $questions_bajo = [];
-	  
-
-    foreach($groups as $group){
-		
->>>>>>> develop-1.5
       //EXTRAE MIEMBROS DEL GRUPO
       $members = $group->getMembers();
       foreach($members as $member){
@@ -667,10 +657,7 @@ class Quiz extends EditorialContentEntityBase implements EntityChangedInterface,
           $nodes =  !empty($ids_mc) ? $storage_mc->loadMultiple($ids_mc) : [];
           //dpm($nodes);
           foreach ($nodes as $node){
-<<<<<<< HEAD
             //dpm('AQUI');
-=======
->>>>>>> develop-1.5
             //EXTRAE EL ROL DE LA MATRIZ
             $field_rol = $node->get('field_rol_del_evaluador')->referencedEntities();
             foreach($field_rol as $rol_mc){
@@ -687,10 +674,6 @@ class Quiz extends EditorialContentEntityBase implements EntityChangedInterface,
             $field_tpe = $node->get('field_tipo_de_empresa')->getValue()[0]['target_id']??NULL;
             $tipo = $group->get('field_tipo')->getValue()[0]['target_id']??NULL;
             if($field_te == $tamano && $field_tpe == $tipo && $rol_act[0]==1){
-<<<<<<< HEAD
-=======
-				dpm('Cumple todo');
->>>>>>> develop-1.5
 
               $storage=\Drupal::entityTypeManager()->getStorage('quiz');
               $query = $storage->getQuery();
