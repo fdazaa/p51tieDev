@@ -1,0 +1,159 @@
+diff --git a/src/Entity/Action.php b/src/Entity/Action.php
+index 5896696..b4ab13d 100644
+--- a/src/Entity/Action.php
++++ b/src/Entity/Action.php
+@@ -26,13 +26,14 @@ use Drupal\business_rules\Events\BusinessRulesEvent;
+  *   config_prefix = "action",
+  *   config_export = {
+  *     "id",
+- *     "type",
+  *     "label",
+  *     "description",
++ *     "settings",
++ *     "tags",
++ *     "uuid",
++ *     "type",
+  *     "target_entity_type",
+  *     "target_bundle",
+- *     "tags",
+- *     "settings"
+  *   },
+  *   admin_permission = "administer site configuration",
+  *   entity_keys = {
+@@ -40,17 +41,6 @@ use Drupal\business_rules\Events\BusinessRulesEvent;
+  *     "label" = "label",
+  *     "uuid" = "uuid"
+  *   },
+- *   config_export = {
+- *     "id",
+- *     "label",
+- *     "description",
+- *     "settings",
+- *     "tags",
+- *     "uuid",
+- *     "type",
+- *     "target_entity_type",
+- *     "target_bundle",
+- *   },
+  *   links = {
+  *     "canonical" =
+  *   "/admin/config/workflow/business_rules/action/{business_rules_action}",
+@@ -137,3 +127,4 @@ class Action extends BusinessRulesItemBase implements ActionInterface {
+   }
+ 
+ }
++
+diff --git a/src/Entity/BusinessRule.php b/src/Entity/BusinessRule.php
+index 3f417e0..592a415 100644
+--- a/src/Entity/BusinessRule.php
++++ b/src/Entity/BusinessRule.php
+@@ -25,14 +25,17 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
+  *   },
+  *   config_prefix = "business_rule",
+  *   config_export = {
++ *     "description",
+  *     "id",
+  *     "label",
+- *     "description",
++ *     "enabled",
++ *     "uuid",
+  *     "reacts_on",
+- *     "target_entity_type",
+- *     "target_bundle",
+  *     "items",
++ *     "status",
+  *     "tags",
++ *     "target_bundle",
++ *     "target_entity_type",
+  *   },
+  *   admin_permission = "administer site configuration",
+  *   entity_keys = {
+@@ -41,19 +44,6 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
+  *     "status" = "enabled",
+  *     "uuid" = "uuid",
+  *   },
+- *   config_export = {
+- *     "description",
+- *     "id",
+- *     "label",
+- *     "enabled",
+- *     "uuid",
+- *     "reacts_on",
+- *     "items",
+- *     "status",
+- *     "tags",
+- *     "target_bundle",
+- *     "target_entity_type",
+- *   },
+  *   links = {
+  *     "canonical" = "/admin/config/workflow/business_rules/{business_rule}",
+  *     "add-form" = "/admin/config/workflow/business_rules/add",
+diff --git a/src/Entity/Condition.php b/src/Entity/Condition.php
+index 52b227f..d727c07 100644
+--- a/src/Entity/Condition.php
++++ b/src/Entity/Condition.php
+@@ -27,6 +27,7 @@ use Drupal\business_rules\Events\BusinessRulesEvent;
+  *   config_export = {
+  *     "id",
+  *     "label",
++ *     "uuid",
+  *     "type",
+  *     "reverse",
+  *     "description",
+@@ -43,17 +44,6 @@ use Drupal\business_rules\Events\BusinessRulesEvent;
+  *     "label" = "label",
+  *     "uuid" = "uuid"
+  *   },
+- *   config_export = {
+- *     "id",
+- *     "label",
+- *     "description",
+- *     "settings",
+- *     "tags",
+- *     "uuid",
+- *     "type",
+- *     "target_entity_type",
+- *     "target_bundle",
+- *   },
+  *   links = {
+  *     "canonical" = "/admin/config/workflow/business_rules/condition/{business_rules_condition}",
+  *     "add-form" = "/admin/config/workflow/business_rules/condition/add",
+diff --git a/src/Entity/Variable.php b/src/Entity/Variable.php
+index 8303f17..d85f7d4 100644
+--- a/src/Entity/Variable.php
++++ b/src/Entity/Variable.php
+@@ -26,12 +26,13 @@ use Drupal\business_rules\VariableInterface;
+  *   config_export = {
+  *     "id",
+  *     "label",
+- *     "type",
+  *     "description",
++ *     "settings",
++ *     "tags",
++ *     "uuid",
++ *     "type",
+  *     "target_entity_type",
+  *     "target_bundle",
+- *     "tags",
+- *     "settings"
+  *   },
+  *   admin_permission = "administer site configuration",
+  *   entity_keys = {
+@@ -39,17 +40,6 @@ use Drupal\business_rules\VariableInterface;
+  *     "label" = "label",
+  *     "uuid" = "uuid"
+  *   },
+- *   config_export = {
+- *     "id",
+- *     "label",
+- *     "description",
+- *     "settings",
+- *     "tags",
+- *     "uuid",
+- *     "type",
+- *     "target_entity_type",
+- *     "target_bundle",
+- *   },
+  *   links = {
+  *     "canonical" = "/admin/config/workflow/business_rules/variable/{business_rules_variable}",
+  *     "add-form" = "/admin/config/workflow/business_rules/variable/add",
