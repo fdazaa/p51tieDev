@@ -45,6 +45,10 @@ class ComposerStaticInit0b280fcdf85f416436739b37d68e981a
     );
 
     public static $prefixLengthsPsr4 = array (
+        'c' => 
+        array (
+            'cweagans\\Composer\\' => 18,
+        ),
         'W' => 
         array (
             'Webmozart\\PathUtil\\' => 19,
@@ -176,6 +180,10 @@ class ComposerStaticInit0b280fcdf85f416436739b37d68e981a
     );
 
     public static $prefixDirsPsr4 = array (
+        'cweagans\\Composer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cweagans/composer-patches/src',
+        ),
         'Webmozart\\PathUtil\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/path-util/src',
@@ -483,10 +491,10 @@ class ComposerStaticInit0b280fcdf85f416436739b37d68e981a
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/reflection/lib/Doctrine/Common',
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
             1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
             2 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
-            3 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+            3 => __DIR__ . '/..' . '/doctrine/reflection/lib/Doctrine/Common',
         ),
         'Consolidation\\SiteProcess\\' => 
         array (

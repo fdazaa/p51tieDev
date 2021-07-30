@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.0",
         "drupal/backup_migrate": "^5.0",
         "drupal/business_rules": "^2.0@beta",
@@ -36,7 +37,7 @@
         "drupal/hide_revision_field": "^2.2",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/menu_per_role": "^1.3",
-        "drupal/quiz": "^6.0@alpha",
+        "drupal/quiz": "6.0@alpha",
         "drupal/reference_table_formatter": "^2.0@alpha",
         "drupal/smtp": "^1.0",
         "drush/drush": "^10.5"
@@ -53,6 +54,12 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            }
+        },
+        "enable-patching": true,
+        "patches": {
+            "drupal/business_rules": {
+                "Activa acciones en condiciones": "web/patch/businessrules/cannot_add_action-3200711-29.patch"
             }
         },
         "installer-paths": {

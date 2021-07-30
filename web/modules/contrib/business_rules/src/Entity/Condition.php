@@ -27,6 +27,7 @@ use Drupal\business_rules\Events\BusinessRulesEvent;
  *   config_export = {
  *     "id",
  *     "label",
+ *     "uuid",
  *     "type",
  *     "reverse",
  *     "description",
@@ -42,17 +43,6 @@ use Drupal\business_rules\Events\BusinessRulesEvent;
  *     "id" = "id",
  *     "label" = "label",
  *     "uuid" = "uuid"
- *   },
- *   config_export = {
- *     "id",
- *     "label",
- *     "description",
- *     "settings",
- *     "tags",
- *     "uuid",
- *     "type",
- *     "target_entity_type",
- *     "target_bundle",
  *   },
  *   links = {
  *     "canonical" = "/admin/config/workflow/business_rules/condition/{business_rules_condition}",

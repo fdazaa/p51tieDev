@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4ac30b6852dcd1f851880bce7652005f52256e9b',
+        'reference' => '3f2d25e51ca54b844292792d76582ab4551227f5',
         'name' => 'drupal/recommended-project',
         'dev' => true,
     ),
@@ -159,6 +159,15 @@
             'provided' => array(
                 0 => '^1.2',
             ),
+        ),
+        'cweagans/composer-patches' => array(
+            'pretty_version' => '1.7.1',
+            'version' => '1.7.1.0',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/../cweagans/composer-patches',
+            'aliases' => array(),
+            'reference' => '9888dcc74993c030b75f3dd548bb5e20cdbd740c',
+            'dev_requirement' => false,
         ),
         'dflydev/dot-access-data' => array(
             'pretty_version' => 'v1.1.0',
@@ -1054,7 +1063,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4ac30b6852dcd1f851880bce7652005f52256e9b',
+            'reference' => '3f2d25e51ca54b844292792d76582ab4551227f5',
             'dev_requirement' => false,
         ),
         'drupal/reference_table_formatter' => array(

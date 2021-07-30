@@ -26,22 +26,6 @@ use Drupal\business_rules\Events\BusinessRulesEvent;
  *   config_prefix = "action",
  *   config_export = {
  *     "id",
- *     "type",
- *     "label",
- *     "description",
- *     "target_entity_type",
- *     "target_bundle",
- *     "tags",
- *     "settings"
- *   },
- *   admin_permission = "administer site configuration",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label",
- *     "uuid" = "uuid"
- *   },
- *   config_export = {
- *     "id",
  *     "label",
  *     "description",
  *     "settings",
@@ -50,6 +34,12 @@ use Drupal\business_rules\Events\BusinessRulesEvent;
  *     "type",
  *     "target_entity_type",
  *     "target_bundle",
+ *   },
+ *   admin_permission = "administer site configuration",
+ *   entity_keys = {
+ *     "id" = "id",
+ *     "label" = "label",
+ *     "uuid" = "uuid"
  *   },
  *   links = {
  *     "canonical" =
@@ -137,3 +127,4 @@ class Action extends BusinessRulesItemBase implements ActionInterface {
   }
 
 }
+

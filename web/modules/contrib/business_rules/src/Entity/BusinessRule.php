@@ -25,23 +25,6 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *   },
  *   config_prefix = "business_rule",
  *   config_export = {
- *     "id",
- *     "label",
- *     "description",
- *     "reacts_on",
- *     "target_entity_type",
- *     "target_bundle",
- *     "items",
- *     "tags",
- *   },
- *   admin_permission = "administer site configuration",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label",
- *     "status" = "enabled",
- *     "uuid" = "uuid",
- *   },
- *   config_export = {
  *     "description",
  *     "id",
  *     "label",
@@ -53,6 +36,13 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *     "tags",
  *     "target_bundle",
  *     "target_entity_type",
+ *   },
+ *   admin_permission = "administer site configuration",
+ *   entity_keys = {
+ *     "id" = "id",
+ *     "label" = "label",
+ *     "status" = "enabled",
+ *     "uuid" = "uuid",
  *   },
  *   links = {
  *     "canonical" = "/admin/config/workflow/business_rules/{business_rule}",

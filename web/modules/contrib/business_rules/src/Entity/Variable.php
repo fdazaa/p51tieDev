@@ -26,22 +26,6 @@ use Drupal\business_rules\VariableInterface;
  *   config_export = {
  *     "id",
  *     "label",
- *     "type",
- *     "description",
- *     "target_entity_type",
- *     "target_bundle",
- *     "tags",
- *     "settings"
- *   },
- *   admin_permission = "administer site configuration",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label",
- *     "uuid" = "uuid"
- *   },
- *   config_export = {
- *     "id",
- *     "label",
  *     "description",
  *     "settings",
  *     "tags",
@@ -49,6 +33,12 @@ use Drupal\business_rules\VariableInterface;
  *     "type",
  *     "target_entity_type",
  *     "target_bundle",
+ *   },
+ *   admin_permission = "administer site configuration",
+ *   entity_keys = {
+ *     "id" = "id",
+ *     "label" = "label",
+ *     "uuid" = "uuid"
  *   },
  *   links = {
  *     "canonical" = "/admin/config/workflow/business_rules/variable/{business_rules_variable}",
