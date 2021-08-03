@@ -639,15 +639,25 @@ class Quiz extends EditorialContentEntityBase implements EntityChangedInterface,
     $groups =!empty($ids) ? $storage->loadMultiple($ids):[];
 
     $total_questions = [];
+    $questions_alto =[];
+    $questions_medio = [];
+    $questions_bajo = [];
 
     foreach($groups as $group){
       //EXTRAE MIEMBROS DEL GRUPO
       $members = $group->getMembers();
+
       foreach($members as $member){
+        $id_members = $member->getUser();
+
+        if ($id_members) {  $id_member=$id_members->id();}
         
-        $id_member = $member->getUser()->id(); //EXTRAE ID DE LOS MIEMBROS DEL GRUPO
+        
+        //$id_member = $member->getUser()->id(); //EXTRAE ID DE LOS MIEMBROS DEL GRUPO
+        //dpm($id_member);
         $id_general = \Drupal::currentUser()->id(); //EXTRAER ID DEL USUARIO LOG IN
         if($id_general == $id_member){
+          
           //Acceso a la matriz de calor
           $storage_mc = \Drupal::entityTypeManager()->getStorage('node');
           $query_mc = $storage_mc->getQuery()
