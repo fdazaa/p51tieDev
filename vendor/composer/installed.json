@@ -3351,6 +3351,57 @@
             "install-path": "../../web/modules/contrib/field_group"
         },
         {
+            "name": "drupal/field_name_prefix_remove",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/field_name_prefix_remove.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_name_prefix_remove-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "664c85338deeb50b34066fcdc7ce1404ce456dae"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1599944441",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Barry_Fisher",
+                    "homepage": "https://www.drupal.org/user/202648"
+                },
+                {
+                    "name": "alx_benjamin",
+                    "homepage": "https://www.drupal.org/user/605604"
+                }
+            ],
+            "description": "Removes field_ prefixes from automatically being created by the Field UI.",
+            "homepage": "https://www.drupal.org/project/field_name_prefix_remove",
+            "support": {
+                "source": "https://git.drupalcode.org/project/field_name_prefix_remove"
+            },
+            "install-path": "../../web/modules/contrib/field_name_prefix_remove"
+        },
+        {
             "name": "drupal/field_permissions",
             "version": "1.1.0",
             "version_normalized": "1.1.0.0",
