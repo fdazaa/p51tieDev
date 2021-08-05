@@ -123,7 +123,7 @@ display:
           relationship: qid
           group_type: group
           admin_label: ''
-          label: Formularios
+          label: 'Adopción y Apropiación'
           exclude: false
           alter:
             alter_text: false

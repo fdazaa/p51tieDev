@@ -469,7 +469,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Opciones
+          label: Operations
           exclude: false
           alter:
             alter_text: false

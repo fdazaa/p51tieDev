@@ -1,21 +1,16 @@
-uuid: 295f3d03-076e-4b89-963c-f6d87e4f51cf
+uuid: bc0d21de-8e8c-4cc4-b84a-37e82e6a443c
 langcode: es
 status: true
 dependencies:
-  enforced:
-    module:
-      - quiz_multichoice
   module:
     - paragraphs
-_core:
-  default_config_hash: WfxrOSrRlPonNJpu6YJZKPZ5i_dxvX-72kOLa-Ymuu0
+    - taxonomy
 id: paragraph.multichoice_score_chosen
 field_name: multichoice_score_chosen
 entity_type: paragraph
-type: integer
+type: entity_reference
 settings:
-  unsigned: false
-  size: normal
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1

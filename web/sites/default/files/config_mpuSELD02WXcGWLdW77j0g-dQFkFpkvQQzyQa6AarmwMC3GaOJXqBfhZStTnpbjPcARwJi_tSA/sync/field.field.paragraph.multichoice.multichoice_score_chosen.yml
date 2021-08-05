@@ -1,28 +1,29 @@
-uuid: cf40e1c4-b5ba-40bd-a189-e1a7d8b86e7b
+uuid: ed6372ac-57a0-4c5e-9f48-369f3f1bc33c
 langcode: es
 status: true
 dependencies:
   config:
     - field.storage.paragraph.multichoice_score_chosen
     - paragraphs.paragraphs_type.multichoice
-  enforced:
-    module:
-      - quiz_multichoice
-_core:
-  default_config_hash: '-ZmRq4aBjN1UwbE_pLysmZKSH7DWlzYWArohmoK8ABI'
+    - taxonomy.vocabulary.score
 id: paragraph.multichoice.multichoice_score_chosen
 field_name: multichoice_score_chosen
 entity_type: paragraph
 bundle: multichoice
 label: 'Valor seleccionado'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  min: null
-  max: null
-  prefix: ''
-  suffix: ''
-field_type: integer
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      score: score
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -16,7 +16,7 @@ id: paragraph.multichoice.multichoice_answer
 field_name: multichoice_answer
 entity_type: paragraph
 bundle: multichoice
-label: Answer
+label: Respuesta
 description: ''
 required: false
 translatable: false

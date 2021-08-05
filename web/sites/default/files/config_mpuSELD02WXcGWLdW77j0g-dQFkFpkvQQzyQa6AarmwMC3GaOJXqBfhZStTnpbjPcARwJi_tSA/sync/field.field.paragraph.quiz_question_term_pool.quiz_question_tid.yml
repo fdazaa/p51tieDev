@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.quiz_question_tid
     - paragraphs.paragraphs_type.quiz_question_term_pool
+    - taxonomy.vocabulary.clasificacion
   enforced:
     module:
       - quiz
@@ -24,10 +25,11 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      clasificacion: clasificacion
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: categorias_procesos
 field_type: entity_reference

@@ -354,7 +354,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Tipo de Pregunta'
+          label: Type
           exclude: false
           alter:
             alter_text: false
@@ -745,7 +745,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Opciones
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -846,7 +846,7 @@ display:
           expose:
             operator_id: type_op
             operator_limit_selection: false
-            label: 'Tipo de Pregunta'
+            label: Type
             description: ''
             use_operator: false
             operator: type_op

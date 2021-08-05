@@ -1,9 +1,0 @@
-uuid: 63069854-22cc-4a1f-9175-10e51134f494
-langcode: es
-status: true
-dependencies: {  }
-id: usuario_tipo_b
-label: 'USUARIO COLABORADOR TIPO A'
-weight: 4
-is_admin: null
-permissions: {  }

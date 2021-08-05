@@ -3,6 +3,8 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.quiz.quiz.field_naturaleza_del_formulario
+    - field.field.quiz.quiz.field_tipo
     - quiz.type.quiz
   enforced:
     module:
@@ -34,6 +36,8 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_naturaleza_del_formulario: true
+  field_tipo: true
   quiz_date: true
   takes: true
   time_limit: true

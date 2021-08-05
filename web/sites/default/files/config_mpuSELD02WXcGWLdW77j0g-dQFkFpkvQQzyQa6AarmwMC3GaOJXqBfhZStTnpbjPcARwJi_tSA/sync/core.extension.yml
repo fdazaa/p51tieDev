@@ -9,7 +9,9 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  br_group: 0
   breakpoint: 0
+  business_rules: 0
   ckeditor: 0
   color: 0
   comment: 0
@@ -25,16 +27,18 @@ module:
   commerce_price: 0
   commerce_product: 0
   commerce_promotion: 0
-  commerce_restrict: 0
   commerce_store: 0
   commerce_tax: 0
   config: 0
   contact: 0
   contextual: 0
+  cshs: 0
   csv_serialization: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
+  dbug: 0
+  devel: 0
   dynamic_page_cache: 0
   editor: 0
   entity: 0
@@ -42,10 +46,17 @@ module:
   epayco: 0
   field: 0
   field_group: 0
+  field_name_prefix_remove: 0
   field_ui: 0
   file: 0
   filter: 0
+  fontawesome: 0
+  fontawesome_iconpicker_widget: 0
+  fontawesome_menu_icons: 0
   forms_steps: 0
+  ginvite: 0
+  gnode: 0
+  group: 0
   help: 0
   history: 0
   image: 0
@@ -67,6 +78,7 @@ module:
   quiz_multichoice: 0
   range: 0
   rdf: 0
+  reference_table_formatter: 0
   rest: 0
   rules: 0
   search: 0
@@ -85,9 +97,12 @@ module:
   typed_data: 0
   update: 0
   user: 0
+  variationcache: 0
   views_bulk_operations: 0
   views_data_export: 0
   views_ui: 0
+  hide_revision_field: 1
+  formdazzle: 10
   views: 10
   paragraphs: 11
   standard: 1000

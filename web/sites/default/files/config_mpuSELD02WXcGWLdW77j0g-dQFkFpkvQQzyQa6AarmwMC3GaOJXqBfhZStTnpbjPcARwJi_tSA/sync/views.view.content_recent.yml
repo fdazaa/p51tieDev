@@ -274,7 +274,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'No hay contenido disponible.'
+          content: 'No content available.'
           plugin_id: text_custom
       relationships:
         uid:
